@@ -6,8 +6,8 @@ export const Header: React.SFC<HeaderProps> = ({siteTitle, tagList}) => (
           <div className="blog-title"><a href="/">Matt Ferderer</a></div>
           <div className="taglist-wrapper clearfix">
             <ul id="taglist" className="taglist">
-              {tagList.map(({url, title}) => (
-                <li><a href={url}>{title}</a></li>
+              {tagList.map(({url, title}, i) => (
+                <li key={i}><a href={url}>{title}</a></li>
               ))}
             </ul>
           </div>
