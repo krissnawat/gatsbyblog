@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
-path: typescript-cannot-invoke-an-expression-whose-type-lacks-a-call-signature
+path: /typescript-cannot-invoke-an-expression-whose-type-lacks-a-call-signature
 title: TypeScript Cannot Invoke an Expression whose Type Lacks a Call Signature
-date: 2017-02-11T01:56:03:00.000Z
+date: 2017-02-11T01:56:03.000Z
 description: I have a love|hate relationship with TypeScript. I love it when it works & hate it when it doesn't do what I think it should. I was trying to clean up some code and wrote the following
 ---
 I have a love|hate relationship with TypeScript. I love it when it works & hate it when it doesn't do what I think it should. I was trying to clean up some code and wrote the following:

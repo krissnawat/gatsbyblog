@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
-path: what-is-pattern-matching-in-elixir
+path: /what-is-pattern-matching-in-elixir
 title: What is Pattern Matching in Elixir?
-date: 2017-04-23T19:38:58:00.000Z
+date: 2017-04-23T19:38:58.000Z
 description: I was confused about pattern matching for quite a while. Every time someone spoke of it, they said how it was one of their favorite features. When they explained what it was though, it was always different from the last person. After finally learning what pattern matching is, it all made sense. Pattern matching is used for a lot of different reasons.
 ---
 I was confused about pattern matching for quite a while. Every time someone spoke of it, they said how it was one of their favorite features. When they explained what it was though, it was always different from the last person. After finally learning what pattern matching is, it all made sense. Pattern matching is used for a lot of different reasons.
@@ -65,15 +65,3 @@ Returns [9, 81, 4, 64]
 ```
 
 If you found this helpful or confusing, please let me know in the comments so I can tweak these examples to make it more useful for others.
-VM1600:2 ---
-templateKey: blog-post
-path: what-is-the-actor-model-and-when-should-you-use-it
-title: What is the Actor Model & When Should You Use it
-date: 2017-05-20T17:57:48:00.000Z
-description: The more things change, the more they stay the same. In the 1970's computer scientists were pushing hardware to its limits. The engineers of the day had all sorts of hacks to squeak out performance. Today we have package.json files full of these. Still we run into scaling problems that force us to split our code base into microservices & pass messages between these microservices. 
-
-This is exactly the same problem people like [Carl Hewitt](https://en.wikipedia.org/wiki/Carl_Hewitt) & [Alan Kay](
----
-The more things change, the more they stay the same. In the 1970's computer scientists were pushing hardware to its limits. The engineers of the day had all sorts of hacks to squeak out performance. Today we have package.json files full of these. Still we run into scaling problems that force us to split our code base into microservices & pass messages between these microservices. 
-
-This is exactly the same problem people like [Carl Hewitt](https://en.wikipedia.org/wiki/Carl_Hewitt) & [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) faced in the 70's. They were running into memory issues & slow programs. The current hardware couldn't keep up. Their invention at the time was to create message passing systems. Alan Kay brought this idea into [Smalltalk](https://en.wikipedia.org/wiki/Smalltalk) which helped popularize the style of object oriented programming. Carl Hewitt took the idea and created the actor model. Years later, these same ideas of message passing would influence Erlang to create an implementation of the actor model as well. Erlang, which is often quoted as the first & most successful implementation of the actor model was actually written without prior knowledge that the actor model existed. 

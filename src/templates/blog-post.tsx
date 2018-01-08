@@ -2,6 +2,7 @@ import * as React from "react"
 import Helmet from "react-helmet"
 import {padStart} from "lodash"
 import "prismjs/themes/prism.css"
+import NotFoundPage from "../pages/404"
 
 export const Content = ({ content, className }) => <div className={className}>{content}</div>
 
@@ -36,6 +37,10 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
 }
 
 const Post = ({ data }) => {
+    if(typeof data === "undefined") {
+      return NotFoundPage
+    }
+    console.log(data)
     const { markdownRemark: post } = data
     return (
         <BlogPostTemplate
@@ -64,7 +69,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         path
-        date(formatString: "MMMM DD, YYYY")
+        date
         title
         description
       }

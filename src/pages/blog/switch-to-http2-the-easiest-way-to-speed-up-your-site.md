@@ -1,9 +1,9 @@
 ---
 templateKey: blog-post
-path: switch-to-http2-the-easiest-way-to-speed-up-your-site
+path: /switch-to-http2-the-easiest-way-to-speed-up-your-site
 title: Switch to HTTP/2, The Easiest Way to Speed up Your Site
-date: 2017-06-01T03:27:55:00.000Z
-description: If content is king, the speed of your delivery may be queen. Slow websites lose readers & customers. Large companies have long recognized that every millisecond counts. 1/10 of a second costs Amazon 1% of their sales. 1/2 a second costs Google 20% of their traffic.[^n] That is a lot of money for those companies. Therefore they put immense effort into tactics to increase the speed of their sites. Fortunately for everyone, HTTP/2 eliminates the need for a lot of those tools.
+date: 2017-06-01T03:27:55.000Z
+description: If content is king, the speed of your delivery may be queen. Slow websites lose readers & customers. Large companies have long recognized that every millisecond counts. 1/10 of a second costs Amazon 1% of their sales. 1/2 a second costs Google 20% of their traffic. That is a lot of money for those companies. Therefore they put immense effort into tactics to increase the speed of their sites. Fortunately for everyone, HTTP/2 eliminates the need for a lot of those tools.
 ---
 If content is king, the speed of your delivery may be queen. Slow websites lose readers & customers. Large companies have long recognized that every millisecond counts. 1/10 of a second costs Amazon 1% of their sales. 1/2 a second costs Google 20% of their traffic.[^n] That is a lot of money for those companies. Therefore they put immense effort into tactics to increase the speed of their sites. Fortunately for everyone, HTTP/2 eliminates the need for a lot of those tools.
 

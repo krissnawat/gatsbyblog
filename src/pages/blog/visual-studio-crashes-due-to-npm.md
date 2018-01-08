@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
-path: visual-studio-crashes-due-to-npm
+path: /visual-studio-crashes-due-to-npm
 title: Visual Studio Crashes Due to NPM
-date: 2017-01-11T15:59:59:00.000Z
+date: 2017-01-11T15:59:59.000Z
 description: I've just started using Visual Studio and so far the experience has been great. The Web Essentials plugin makes web development a lot better. Unfortunately Visual Studio has not been playing nice when I select to "Open a Website" that is using NPM.
 ---
 ## The Issue

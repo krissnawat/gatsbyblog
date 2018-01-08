@@ -1,7 +1,8 @@
 import * as React from "react"
+import Link from 'gatsby-link'
 
 export const ArticlePreview: React.SFC<ArticlePreviewProps> = ({title, url, blurb, date}) => (
-    <a className="article-link" href={url}>
+    <Link className="article-link" to={url}>
         <article className="box is-link post">
             <header className="post-header">
                 <h2 className="post-title">{title}</h2>
@@ -11,7 +12,7 @@ export const ArticlePreview: React.SFC<ArticlePreviewProps> = ({title, url, blur
                 <time className="post-date" dateTime={date}>{date}</time>
             </footer>
         </article>
-    </a>
+    </Link>
 )
 
 export default ArticlePreview

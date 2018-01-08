@@ -1,5 +1,5 @@
 export const SITE_TITLE = "Matt Ferderer"
-export const SITE_DESCRIPTION = "Web Developer - Tinkering, Developing &amp; Engineering One Bit at a Time"
+export const SITE_DESCRIPTION = "Web Developer - Tinkering, Developing & Engineering One Bit at a Time"
 export const DOMAIN = "https://mattferderer.com"
 export const TWITTER = "mattferderer"
 export const STACKOVERFLOW = "mattferderer"

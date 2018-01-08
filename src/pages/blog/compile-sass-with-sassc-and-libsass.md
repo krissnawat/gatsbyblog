@@ -3,7 +3,7 @@ templateKey: blog-post
 path: /compile-sass-with-sassc-and-libsass
 title: Compile Sass with SassC and Libsass
 date: 2014-01-09T15:38:00.000Z
-description: Recently [Foundation](http://foundation.zurb.com/) launched version 5 of their framework. This introduced me to [Libsass](https://github.com/hcatlin/libsass) and [SassC](https://github.com/hcatlin/sassc), a library and wrapper that compiles Sass using C instead of Ruby.
+description: Recently Foundation launched version 5 of their framework. This introduced me to Libsass and SassC, a library and wrapper that compiles Sass using C instead of Ruby.
 ---
 Recently [Foundation](http://foundation.zurb.com/) launched version 5 of their framework. This introduced me to [Libsass](https://github.com/hcatlin/libsass) and [SassC](https://github.com/hcatlin/sassc), a library and wrapper that compiles Sass using C instead of Ruby. The Libsass compiler dramatically reduces compiling times compared to the Ruby compiler. You can run Libsass with  Node.js and other languages as well instead of using the C wrapper.
 

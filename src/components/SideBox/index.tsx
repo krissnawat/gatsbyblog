@@ -16,5 +16,5 @@ export interface SideBoxProps {
     title?: string,
     content?: React.ReactNode | string,
     className?: string,
-    children: React.ReactNode
+    children?: React.ReactNode
 }
