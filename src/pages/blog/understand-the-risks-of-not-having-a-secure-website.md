@@ -4,6 +4,10 @@ path: /understand-the-risks-of-not-having-a-secure-website
 title: 80% of the Top Million Websites are Making this Mistake
 date: 2017-06-29T02:37:46.000Z
 description: You put some trust in me by clicking a sensational headline I wrote. In return let me cut to the chase because your time is important. Over 80% of the top million websites either don't have a secure HTTPS website or they have one and don't force all their traffic to use it. This can cripple your business, even if you're not doing any financial transactions. 
+tags:
+  - SSL
+  - Security
+  - Business
 ---
 You put some trust in me by clicking a sensational headline I wrote. In return let me cut to the chase because your time is important. [Over 80%](https://docs.google.com/spreadsheets/d/1IvrkNgwBLf88XQUoUUHmgNeIJAGKZPdA5HRJ6_KoUe8/edit#gid=1080831907&range=R254) of the top million websites either don't have a secure HTTPS website or they have one and don't force all their traffic to use it. This can cripple your business, even if you're not doing any financial transactions. 
 

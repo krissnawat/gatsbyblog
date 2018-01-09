@@ -4,8 +4,11 @@ path: /reasons-why-every-website-should-use-ssl-https-where-to-get-a-free-ssl
 title: Reasons Why Every Website Should Use SSL/HTTPS & Where to Get a Free SSL
 date: 2017-01-11T16:03:55.000Z
 description: An SSL is a certificate that allows you to have a secure website. Your address will use HTTPS instead of HTTP and the browser will show a lock symbol or color the address bar to signify this to your visitors. 
+tags:
+  - SSL
+  - Security
 ---
-Looking for the TLDR version? 
+Looking for the TLDR version?
 
 > Go to [Let's Encrypt](https://letsencrypt.org/) to get a free SSL so that your site is safer, more accurate, faster & can offer more features for your visitors as well as report back correct data to you. 
 

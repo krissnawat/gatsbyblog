@@ -4,6 +4,8 @@ path: /using-ternary-operators-in-es6-string-templates
 title: Using Ternary Operators in ES6 String Templates
 date: 2017-01-11T16:01:57.000Z
 description: The new ES6 version of JavaScript introduced Template Strings which allow for improved readability of code when working with multiple line strings. 
+tags:
+  - JavaScript
 ---
 The new ES6 version of JavaScript introduced Template Strings which allow for improved readability of code when working with multiple line strings. 
 

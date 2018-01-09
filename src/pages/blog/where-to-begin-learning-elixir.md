@@ -4,6 +4,9 @@ path: /where-to-begin-learning-elixir
 title: Where to Begin Learning Elixir
 date: 2017-04-19T02:56:03.000Z
 description: I've been skimming a lot of resources lately on learning Elixir. My preferred learning method is to build things immediately, while learning the syntax and finer details along the way. I've never been a fan spending hours learning the finer details & not having anything to show for it.
+tags:
+  - Elixir
+  - Functional Programming
 ---
 I've been skimming a lot of resources lately on learning Elixir. My preferred learning method is to build things immediately, while learning the syntax and finer details along the way. I've never been a fan spending hours learning the finer details & not having anything to show for it. If that's your preferred style of learning I suggest the following resources:
 

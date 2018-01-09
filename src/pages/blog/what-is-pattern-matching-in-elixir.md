@@ -4,6 +4,9 @@ path: /what-is-pattern-matching-in-elixir
 title: What is Pattern Matching in Elixir?
 date: 2017-04-23T19:38:58.000Z
 description: I was confused about pattern matching for quite a while. Every time someone spoke of it, they said how it was one of their favorite features. When they explained what it was though, it was always different from the last person. After finally learning what pattern matching is, it all made sense. Pattern matching is used for a lot of different reasons.
+tags:
+  - Functional Programming
+  - Pattern Matching
 ---
 I was confused about pattern matching for quite a while. Every time someone spoke of it, they said how it was one of their favorite features. When they explained what it was though, it was always different from the last person. After finally learning what pattern matching is, it all made sense. Pattern matching is used for a lot of different reasons.
 

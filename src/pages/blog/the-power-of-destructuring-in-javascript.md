@@ -5,8 +5,8 @@ title: The Power of Destructuring in JavaScript
 date: 2017-06-29T03:14:31.000Z
 description: In my free time, I've been messing around with a functional programming language built for the Erlang VM called Elixir. One of my favorite features of Elixir is pattern matching. As of ES6, we now have some pattern matching features in JavaScript. One of those is destructuring. Using destructuring will simplify your code & make it more readable. 
 tags:
-  - example
-  - other..
+  - JavaScript
+  - Pattern Matching
 ---
 In my free time, I've been messing around with a functional programming language built for the Erlang VM called Elixir. One of my favorite features of Elixir is [pattern matching](https://mattferderer.com/what-is-pattern-matching-in-elixir). As of ES6, we now have some pattern matching features in JavaScript. One of those is destructuring. Using destructuring will simplify your code & make it more readable. 
 

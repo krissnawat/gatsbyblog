@@ -4,6 +4,8 @@ path: /how-to-implement-terms-of-service-on-your-website
 title: How to Implement Terms of Service on Your Website
 date: 2017-11-08T02:32:32.000Z
 description: I often hear a lot of developer's say to just copy someone else's Terms of Service, make some minor changes & call it good. This is obviously not great legal advice. Today I actually learned some important concepts in regards to Terms of Service.
+tags:
+  - Podcasts
 ---
 I often hear a lot of developer's say to just copy someone else's Terms of Service, make some minor changes & call it good. This is obviously not great legal advice. Today I actually learned some important concepts in regards to Terms of Service thanks to the [Hanselminutes podcast](https://www.hanselminutes.com/601/terms-of-service-for-developers-tos-explained-with-lawyer-gary-nissenbaum) & his guest [Gary Nissenbaum](https://www.gdnlaw.com/internet.htm). 
 

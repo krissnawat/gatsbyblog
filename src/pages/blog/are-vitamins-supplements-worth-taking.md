@@ -4,8 +4,10 @@ path: /are-vitamins-supplements-worth-taking
 title: Are Vitamins & Supplements Worth Taking?
 date: 2017-11-07T02:12:23.000Z
 description: I'm personally a big fan of Vitamin D & Zinc whenever I feel run down or feel a cold coming. I was excited to see one of my favorite new podcasts, Science Vs tackle this topic. 
+tags:
+  - Podcasts
 ---
-I'm personally a big fan of Vitamin D & Zinc whenever I feel run down or feel a cold coming. I was excited to see one of my favorite new podcasts, [Science Vs](https://gimletmedia.com/science-vs/) tackle this topic. 
+I'm personally a big fan of Vitamin D & Zinc whenever I feel run down or feel a cold coming. I was excited to see one of my favorite new podcasts, [Science Vs](https://gimletmedia.com/science-vs/) tackle this topic.
 
 Here's a quick recap on what I took away from this episode:
 
