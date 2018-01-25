@@ -1,13 +1,9 @@
-# gatsby-starter-default
-The default Gatsby starter
+# Gatsby version of my site
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+This should is in the early stages of development. A lot of code is copied & pasted from a Ghost blog I had setup. I'm transitioning that over to this blog. I plan on cleaning parts up & refactoring as I have time.
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
+## Credits
 
-## Deploy
+The webkid styles are originally from the [ghost-wbkd theme](https://github.com/wbkd/ghost-wbkd)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+A lot of leftover Ghost CSS is included as well. I need to do a lot of tidying up.

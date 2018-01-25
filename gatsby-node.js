@@ -1,6 +1,10 @@
 const path = require('path');
 const _ = require("lodash");
 
+function createLinkToTag(tag){ 
+  return `/tag/${_.kebabCase(tag.toLowerCase())}`;
+}
+
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
@@ -49,7 +53,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       const tagList = Array.from(tagSet);
       tagList.forEach(tag => {
         createPage({
-          path: `/tag/${_.kebabCase(tag.toLowerCase())}/`,
+          path: createLinkToTag(tag),
           component: path.resolve("src/templates/tag.tsx"),
           context: {
             tag

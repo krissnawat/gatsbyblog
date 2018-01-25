@@ -1,5 +1,14 @@
 @import 'global-vars';
-@import 'highlight-default';
 @import 'font-awesome';
 @import 'screen-modified';
 @import 'webkid-modified';
+
+.tag-container {
+    h1 {
+        background: #545454;
+        padding: .5em 1em;
+        color: #FFF;
+        font-family: "Open Sans", sans-serif;
+        margin-bottom:0;
+    }
+}

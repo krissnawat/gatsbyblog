@@ -16,8 +16,15 @@ export const TagTemplate = ({pathContext, data}) => {
     ))
     return (
         <div className="tag-container">
+          <h1>{tag}</h1>
           <ArticleList articles={articles} />
           <SideBar />
+          <Helmet
+            title={`Matt Ferderer | ${tag}`}
+            bodyAttributes={
+              {class: "post-template"}
+            }
+          />
         </div>
     )
 }
