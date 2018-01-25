@@ -30,7 +30,6 @@ import {
 const IndexPage = (props) => {
   const { data } = props;
   const { edges: posts } = data.allMarkdownRemark;
-  console.log(props)
 
   const list = posts
     .filter(post => post.node.frontmatter.templateKey === "blog-post")

@@ -3,6 +3,7 @@ import Helmet from "react-helmet"
 import {padStart} from "lodash"
 import "prismjs/themes/prism.css"
 import NotFoundPage from "../pages/404"
+import SideBar from "../components/SideBar"
 
 export const Content = ({ content, className }) => <div className={className}>{content}</div>
 
@@ -37,27 +38,29 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
 }
 
 const Post = ({ data }) => {
-    if(typeof data === "undefined") {
+    if (typeof data === "undefined") {
       return NotFoundPage
     }
-    console.log(data)
     const { markdownRemark: post } = data
     return (
-        <BlogPostTemplate
-            content={post.html}
-            contentComponent={HTMLContent}
-            description={post.frontmatter.description}
-            helmet={
-              <Helmet
-                title={`Matt Ferderer | ${post.frontmatter.title}`}
-                bodyAttributes={
-                  {class: "post-template"}
-                }
-              />
-            }
-            date={post.frontmatter.date}
-            title={post.frontmatter.title}
-        />
+        <div className="article-container">
+          <BlogPostTemplate
+              content={post.html}
+              contentComponent={HTMLContent}
+              description={post.frontmatter.description}
+              helmet={
+                <Helmet
+                  title={`Matt Ferderer | ${post.frontmatter.title}`}
+                  bodyAttributes={
+                    {class: "post-template"}
+                  }
+                />
+              }
+              date={post.frontmatter.date}
+              title={post.frontmatter.title}
+          />
+          <SideBar />
+        </div>
     )
 }
 

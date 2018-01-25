@@ -1,17 +1,28 @@
 import * as React from "react"
 import Helmet from "react-helmet"
 import "prismjs/themes/prism.css"
+import ArticleList from "../components/ArticleList"
+import SideBar from "../components/SideBar"
 
 export const TagTemplate = ({pathContext, data}) => {
     const tag = pathContext.tag
-    const postEdges = data.allMarkdownRemark.edges
-    console.log(tag)
-    console.log(postEdges)
+    const articles = data.allMarkdownRemark.edges.map(({node}) => (
+      {
+        url: node.frontmatter.path,
+        title: node.frontmatter.title,
+        blurb: node.frontmatter.description,
+        date: node.frontmatter.date,
+      }
+    ))
     return (
         <div className="tag-container">
+          <ArticleList articles={articles} />
+          <SideBar />
         </div>
     )
 }
+
+export default TagTemplate
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {
@@ -23,12 +34,15 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          excerpt
-          timeToRead
+          excerpt(pruneLength: 400)
+          id
           frontmatter {
-            title
             tags
+            templateKey
+            path
             date
+            title
+            description
           }
         }
       }
