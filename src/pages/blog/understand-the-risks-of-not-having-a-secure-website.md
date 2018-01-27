@@ -16,10 +16,10 @@ An HTTPS website creates a secure channel between you & your audience. Without i
 For the sake of abbreviate, there are two types of websites I want to talk about - HTTP and HTTPS. HTTPS websites often have a combination of green text in the browser's address bar and a padlock next to the website address. An HTTP site will have none of that. 
 
 ![Clear Sans typeface](../../img/secure-url.jpg)
-![Clear Sans typeface](non-secure-url.jpg)
+Secure HTTPS Website in the Chrome web browser. 
 
 <figure style="text-align:center;"> 
-<img src="https://s3-us-west-2.amazonaws.com/mf-content/secure-url.jpg" alt="Secure HTTPS Website in the Chrome web browser"> 
+![Clear Sans typeface](non-secure-url.jpg)
 <figcaption>Secure HTTPS Website in the Chrome web browser.</figcaption> 
 </figure>
 
