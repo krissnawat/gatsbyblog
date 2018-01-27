@@ -1,5 +1,6 @@
 import * as React from "react"
 import Helmet from "react-helmet"
+import Link from "gatsby-link"
 import {padStart} from "lodash"
 import "prismjs/themes/prism.css"
 import NotFoundPage from "../pages/404"
@@ -47,7 +48,7 @@ const PostTags = ({tags}: {tags: string[]}) => (
   <section className="post-tags">
     {tags && tags.map((tag, i) => (
       <span key={i}>
-        <a href={createLinkToTag(tag)}>{tag}</a>
+        <Link to={createLinkToTag(tag)}>{tag}</Link>
         {i !== (tags.length - 1) && <span> | </span>}
       </span>
     ))}
