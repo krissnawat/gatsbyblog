@@ -1,5 +1,5 @@
 import * as React from "react"
-import Link from 'gatsby-link'
+import Link from "gatsby-link"
 
 export const Header: React.SFC<HeaderProps> = ({siteTitle, tagList}) => (
     <header id="header">
@@ -8,7 +8,7 @@ export const Header: React.SFC<HeaderProps> = ({siteTitle, tagList}) => (
           <div className="taglist-wrapper clearfix">
             <ul id="taglist" className="taglist">
               {tagList.map(({url, title}, i) => (
-                <li key={i}><a href={url}>{title}</a></li>
+                <li key={i}><Link to={url}>{title}</Link></li>
               ))}
             </ul>
           </div>

@@ -1,16 +1,19 @@
-const path = require('path');
-const _ = require("lodash");
+const path = require('path')
+const _ = require('lodash')
 
-function createLinkToTag(tag){ 
-  return `/tag/${_.kebabCase(tag.toLowerCase())}`;
+function createLinkToTag(tag) {
+  return `/tag/${_.kebabCase(tag.toLowerCase())}`
 }
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+  const { createPage } = boundActionCreators
 
   return graphql(`
     {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
         edges {
           node {
             excerpt(pruneLength: 400)
@@ -30,37 +33,37 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
   `).then(result => {
     if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()));
-      return Promise.reject(result.errors);
+      result.errors.forEach(e => console.error(e.toString()))
+      return Promise.reject(result.errors)
     }
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    
       // Create Blog Pages
       createPage({
         path: node.frontmatter.path,
-        component: path.resolve(`src/templates/${String(node.frontmatter.templateKey)}.tsx`),
-        context: {} // additional data can be passed via context
-      });
+        component: path.resolve(
+          `src/templates/${String(node.frontmatter.templateKey)}.tsx`
+        ),
+        context: {}, // additional data can be passed via context
+      })
 
       // Create Tag Pages
       const tagSet = new Set()
       if (node.frontmatter.tags) {
         node.frontmatter.tags.forEach(tag => {
-          tagSet.add(tag);
-        });
+          tagSet.add(tag)
+        })
       }
-      const tagList = Array.from(tagSet);
+      const tagList = Array.from(tagSet)
       tagList.forEach(tag => {
         createPage({
           path: createLinkToTag(tag),
-          component: path.resolve("src/templates/tag.tsx"),
+          component: path.resolve('src/templates/tag.tsx'),
           context: {
-            tag
-          }
-        });
-      });
-
-    });
-  });
-};
+            tag,
+          },
+        })
+      })
+    })
+  })
+}

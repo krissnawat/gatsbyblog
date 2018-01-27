@@ -3,44 +3,18 @@ import Link from 'gatsby-link'
 import ArticleList from '../components/ArticleList'
 import SideBar from '../components/SideBar'
 
-import { 
-  SITE_TITLE,
-  SITE_DESCRIPTION,
-  TWITTER,
-  STACKOVERFLOW,
-  LINKEDIN,
-  GITHUB
-} from "../constants"
-
-// const list = [
-//   {
-//     url: "#",
-//     title: "Test",
-//     blurb: "blurb...",
-//     date: "12-12-2017",
-//   },
-//   {
-//     url: "#",
-//     title: "Test 2",
-//     blurb: "blurb. 2..",
-//     date: "12-12-2017",
-//   }
-// ]
-
-const IndexPage = (props) => {
-  const { data } = props;
-  const { edges: posts } = data.allMarkdownRemark;
+const IndexPage = props => {
+  const { data } = props
+  const { edges: posts } = data.allMarkdownRemark
 
   const list = posts
-    .filter(post => post.node.frontmatter.templateKey === "blog-post")
-    .map(({node: post}) => (
-      {
-        url: post.frontmatter.path,
-        title: post.frontmatter.title,
-        blurb: post.frontmatter.description,
-        date: post.frontmatter.date
-      }
-    ))
+    .filter(post => post.node.frontmatter.templateKey === 'blog-post')
+    .map(({ node: post }) => ({
+      url: post.frontmatter.path,
+      title: post.frontmatter.title,
+      blurb: post.frontmatter.description,
+      date: post.frontmatter.date,
+    }))
   return (
     <div>
       <ArticleList articles={list} />
@@ -68,4 +42,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
