@@ -19,11 +19,11 @@ So why is HTTP/2 faster? The biggest benefit is multiplexing. In HTTP/1 the amou
 
 Here is a quick example of the website [HTTP vs HTTPS](http://www.httpvshttps.com/) where you can see what exactly is happening.  
 
-![HTTP/1 Waterfall Loading](https://s3-us-west-2.amazonaws.com/mf-content/http1-waterfall.jpg)
+![HTTP/1 Waterfall Loading](img/http1-waterfall.jpg)
 
 With HTTP/1 a browser can only download 6 files at a time per website domain. This results in a waterfall effect. To achieve this, the browser opens 6 connections to your website. One connection for each file. Each connection will often take 100 milliseconds or more to make the initial connection. This connection time is even slower on mobile phone networks. Once connected, the file still needs to be downloaded. Having a "fast" internet only helps with the actual downloading of the file. The time it takes to make those connections depends more on the physical distance between you and the website serving it. One trick used by larger sites is known as sharding. They split their content on multiple website domains to increase the number of files that can be downloaded at once. Unfortunately, this still requires that 100+ millisecond delay to open each connection. To help lower that, these websites will put copies of their site in data centers all around the world to lower the physical distance between the website and the visitor.
 
-![HTTP/2 Multiplexing Loading in Parallel](https://s3-us-west-2.amazonaws.com/mf-content/http2-multiplexing.jpg)
+![HTTP/2 Multiplexing Loading in Parallel](img/http2-multiplexing.jpg)
 
 The above picture uses HTTP/2. Here only one connection is made. With that one connection, multiple files can be downloaded at the same time. This prevents the waterfall effect & having to wait for 6 connections to be made. You can still use sharding but it could actually hurt your performance now. If you use sharding, take a look at some of the [workarounds](https://docs.google.com/presentation/d/1r7QXGYOLCh4fcUq0jDdDwKJWNqWK1o4xMtYpKZCJYjM/present?slide=id.g40fbe7d8c_076).
 
