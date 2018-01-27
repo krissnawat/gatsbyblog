@@ -6,3 +6,9 @@
 .post-content img {
     padding: 0;
 }
+
+.gatsby-resp-image-link + i {
+    font-size: 75%;
+    text-align: center;
+    display: block;
+}
