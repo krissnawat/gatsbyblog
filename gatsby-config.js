@@ -63,6 +63,17 @@ module.exports = {
       }, 
     },
     {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          "/*": [
+            `Strict-Transport-Security: "max-age=63072000; includeSubdomains; preload"`,
+            `X-Xss-Protection: "1; mode=block" always`,
+          ],
+        },
+      }
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         serialize: ({ site, allSitePage }) =>
