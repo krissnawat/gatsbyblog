@@ -9,7 +9,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-twitter`,
-    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -68,7 +67,6 @@ module.exports = {
         headers: {
           "/*": [
             `Strict-Transport-Security: "max-age=63072000; includeSubdomains; preload"`,
-            `X-Xss-Protection: "1; mode=block" always`,
           ],
         },
       }
