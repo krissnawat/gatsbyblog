@@ -1,5 +1,6 @@
 import * as React from "react"
 import Helmet from "react-helmet"
+import * as config from "../constants"
 import "prismjs/themes/prism.css"
 import ArticleList from "../components/ArticleList"
 import SideBar from "../components/SideBar"
@@ -14,16 +15,29 @@ export const TagTemplate = ({pathContext, data}) => {
         date: node.frontmatter.date,
       }
     ))
+    const pageTitle = `${tag} Articles | ${config.SITE_TITLE}`
+    const description = `Articles about ${tag}`
     return (
         <div className="tag-container">
           <h1>{tag}</h1>
           <ArticleList articles={articles} />
           <SideBar />
           <Helmet
-            title={`Matt Ferderer | ${tag}`}
+            title={pageTitle}
             bodyAttributes={
               {class: "post-template"}
             }
+            meta={[
+              { name: "description", content: description },
+              { property: "og:type", content: "website" },
+              { property: "og:title", content: pageTitle },
+              { property: "og:description", content: description },
+              { property: "og:url", content: `${config.DOMAIN}/${tag}` },
+              { name: "twitter:card", content: "summary" },
+              { name: "twitter:title", content: pageTitle },
+              { name: "twitter:description", content: description },
+              { name: "twitter:url", content: `${config.DOMAIN}/${tag}` },
+            ]}
           />
         </div>
     )
@@ -55,4 +69,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

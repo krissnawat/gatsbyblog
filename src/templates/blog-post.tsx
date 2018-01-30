@@ -1,11 +1,12 @@
 import * as React from "react"
 import Helmet from "react-helmet"
 import Link from "gatsby-link"
-import {padStart} from "lodash"
+import { padStart } from "lodash"
 import "prismjs/themes/prism.css"
 import NotFoundPage from "../pages/404"
 import SideBar from "../components/SideBar"
-import {createLinkToTag} from "../helpers"
+import * as config from "../constants"
+import { createLinkToTag } from "../helpers"
 
 export const Content = ({ content, className }) => <div className={className}>{content}</div>
 
@@ -18,33 +19,33 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
   const PostContent = contentComponent || Content
   const d = new Date(date)
   const dateTime = d.getFullYear().toString() + "-" +
-  padStart((d.getMonth() + 1).toString(), 2, "0") + "-" +
-  padStart(d.getDate().toString(), 2, "0")
+    padStart((d.getMonth() + 1).toString(), 2, "0") + "-" +
+    padStart(d.getDate().toString(), 2, "0")
 
   return (
     <div id="article" className="box post-template">
-      { helmet ? helmet : ""}
+      {helmet ? helmet : ""}
       <header className="post-header post">
-          <h1 className="post-title">{title}</h1>
-          <section className="post-meta">
-              <time className="post-date" dateTime={dateTime}>{date}</time>
-          </section>
+        <h1 className="post-title">{title}</h1>
+        <section className="post-meta">
+          <time className="post-date" dateTime={dateTime}>{date}</time>
+        </section>
       </header>
       <article className="post">
-          <section className="post-content">
-            <PostContent content={content} />
-          </section>
-          <PostTags tags={tags} />
-          <Footer
-            link={path}
-            title={title}
-          />
+        <section className="post-content">
+          <PostContent content={content} />
+        </section>
+        <PostTags tags={tags} />
+        <Footer
+          link={path}
+          title={title}
+        />
       </article>
     </div>
   )
 }
 
-const PostTags = ({tags}: {tags: string[]}) => (
+const PostTags = ({ tags }: { tags: string[] }) => (
   <section className="post-tags">
     {tags && tags.map((tag, i) => (
       <span key={i}>
@@ -56,38 +57,54 @@ const PostTags = ({tags}: {tags: string[]}) => (
 )
 
 const Post = ({ data }) => {
-    if (typeof data === "undefined") {
-      return NotFoundPage
-    }
-    const { markdownRemark: post } = data
-    return (
-        <div className="article-container">
-          <BlogPostTemplate
-              content={post.html}
-              contentComponent={HTMLContent}
-              description={post.frontmatter.description}
-              helmet={
-                <Helmet
-                  title={`Matt Ferderer | ${post.frontmatter.title}`}
-                  bodyAttributes={
-                    {class: "post-template"}
-                  }
-                />
-              }
-              date={post.frontmatter.date}
-              title={post.frontmatter.title}
-              path={post.frontmatter.path}
-              tags={post.frontmatter.tags}
+  if (typeof data === "undefined") {
+    return NotFoundPage
+  }
+  const { markdownRemark: post } = data
+  const coverImage = post.frontmatter.cover ?
+    `${config.DOMAIN}${post.frontmatter.cover}` :
+    `https://via.placeholder.com/1024x512/2bbdf7/FFF?text=${post.frontmatter.title}`
+  return (
+    <div className="article-container">
+      <BlogPostTemplate
+        content={post.html}
+        contentComponent={HTMLContent}
+        description={post.frontmatter.description}
+        helmet={
+          <Helmet
+            title={`${config.SITE_TITLE} | ${post.frontmatter.title}`}
+            bodyAttributes={
+              { class: "post-template" }
+            }
+            meta={[
+              { name: "description", content: post.frontmatter.description },
+              { property: "og:type", content: "website" },
+              { property: "og:title", content: post.frontmatter.title },
+              { property: "og:description", content: post.frontmatter.description },
+              { property: "og:url", content: config.DOMAIN },
+              { property: "og:image", content: coverImage },
+              { name: "twitter:card", content: "summary_large_image" },
+              { name: "twitter:title", content: post.frontmatter.title },
+              { name: "twitter:description", content: post.frontmatter.description },
+              { name: "twitter:url", content: config.DOMAIN },
+              { name: "twitter:image", content: coverImage },
+            ]}
           />
-          <SideBar />
-        </div>
-    )
+        }
+        date={post.frontmatter.date}
+        title={post.frontmatter.title}
+        path={post.frontmatter.path}
+        tags={post.frontmatter.tags}
+      />
+      <SideBar />
+    </div>
+  )
 }
 
-const Footer = ({link, title}) => (
+const Footer = ({ link, title }) => (
   <footer className="post-footer">
     <PostShare
-      link={`https://mattferderer.com${link}`}
+      link={`${config.DOMAIN}${link}`}
       title={title}
     />
     <section className="author">
@@ -100,23 +117,20 @@ const Footer = ({link, title}) => (
             }
           }
         >
-          <span className="hidden">Matt Ferderer's Picture. Just imagine something really nice &amp; it'll be a win win for both of us.</span>
+          <span className="hidden">{config.AUTHOR}'s Picture. Just imagine something really nice &amp; it'll be a win win for both of us.</span>
         </span>
       </figure>
       <div className="bio">
         <h4>
-          <span>Matt Ferderer</span>
+          <span>{config.AUTHOR}</span>
         </h4>
-        <p>
-          I am a Dad, Husband &amp; Developer who just happens to be interested in JavaScript, C#, F#, Elixir, Web Security, Artificial Intelligence, Cryptocurrency and Virtual Reality.
-          Besides family &amp; tech, my interests revolve around fitness, education &amp; business.
-        </p>
+        <p>{config.BIO}</p>
       </div>
     </section>
   </footer>
 )
 
-const PostShare = ({link, title}) => (
+const PostShare = ({ link, title }) => (
   <section className="share">
     <h4>Sharing is caring. Help spread the word &amp; share this post!</h4>
     <ShareButton shareTo="twitter" link={link} title={title} />
@@ -127,7 +141,7 @@ const PostShare = ({link, title}) => (
   </section>
 )
 
-const ShareButton = ({shareTo, link, title}) => {
+const ShareButton = ({ shareTo, link, title }) => {
   const getShareLink = () => {
     switch (shareTo) {
       case "twitter":
@@ -187,6 +201,7 @@ export const pageQuery = graphql`
         date
         title
         description
+        cover
         tags
       }
     }

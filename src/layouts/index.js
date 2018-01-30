@@ -19,21 +19,6 @@ const TemplateWrapper = ({ children }) => (
   <div>
     {/* TODO: Remove page specific parts from meta for og and twitter. Move them to home page layout & blog page layout */}
     <Helmet
-      title={config.SITE_TITLE}
-      meta={[
-        { name: 'description', content: config.SITE_DESCRIPTION },
-        { name: 'HandheldFriendly', content: 'True' },
-        { property: 'og:site_name', content: config.SITE_TITLE },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: config.SITE_TITLE },
-        { property: 'og:description', content: config.SITE_DESCRIPTION },
-        { property: 'og:url', content: config.DOMAIN },
-        { name: 'twitter:card', content: 'summary' },
-        { name: 'twitter:title', content: config.SITE_TITLE },
-        { name: 'twitter:description', content: config.SITE_DESCRIPTION },
-        { name: 'twitter:url', content: config.DOMAIN },
-        { name: 'twitter:site', content: '@' + config.TWITTER },
-      ]}
       link={[
         {
           rel: 'stylesheet',
@@ -41,6 +26,12 @@ const TemplateWrapper = ({ children }) => (
           href:
             '//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400',
         },
+      ]}
+      meta={[
+        { name: "HandheldFriendly", content: "True" },
+        { property: "og:site_name", content: config.SITE_TITLE },
+        { name: "twitter:site", content: "@" + config.TWITTER },
+
       ]}
     />
     <Header siteTitle={config.SITE_TITLE} tagList={menuLinks} />
