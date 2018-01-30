@@ -1,5 +1,5 @@
 import * as React from "react"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import Link from "gatsby-link"
 import { padStart } from "lodash"
 import "prismjs/themes/prism.css"
@@ -15,16 +15,37 @@ export const HTMLContent = ({ content, className }) => <div
   dangerouslySetInnerHTML={{ __html: content }}
 />
 
-export const BlogPostTemplate = ({ content, contentComponent, description, title, date, helmet, tags, path }) => {
+export const BlogPostTemplate = ({ content, contentComponent, description, title, date, tags, path, cover }) => {
   const PostContent = contentComponent || Content
   const d = new Date(date)
   const dateTime = d.getFullYear().toString() + "-" +
     padStart((d.getMonth() + 1).toString(), 2, "0") + "-" +
     padStart(d.getDate().toString(), 2, "0")
+  const coverImage = cover ?
+    `${config.DOMAIN}${cover}` :
+    `https://via.placeholder.com/1024x512/2bbdf7/FFF?text=${title}`
 
   return (
     <div id="article" className="box post-template">
-      {helmet ? helmet : ""}
+      <Helmet
+        title={`${config.SITE_TITLE} | ${title}`}
+        bodyAttributes={
+          { class: "post-template" }
+        }
+        meta={[
+          { name: "description", content: description },
+          { property: "og:type", content: "website" },
+          { property: "og:title", content: title },
+          { property: "og:description", content: description },
+          { property: "og:url", content: config.DOMAIN },
+          { property: "og:image", content: coverImage },
+          { name: "twitter:card", content: "summary_large_image" },
+          { name: "twitter:title", content: title },
+          { name: "twitter:description", content: description },
+          { name: "twitter:url", content: config.DOMAIN },
+          { name: "twitter:image", content: coverImage },
+        ]}
+      />
       <header className="post-header post">
         <h1 className="post-title">{title}</h1>
         <section className="post-meta">
@@ -61,40 +82,17 @@ const Post = ({ data }) => {
     return NotFoundPage
   }
   const { markdownRemark: post } = data
-  const coverImage = post.frontmatter.cover ?
-    `${config.DOMAIN}${post.frontmatter.cover}` :
-    `https://via.placeholder.com/1024x512/2bbdf7/FFF?text=${post.frontmatter.title}`
   return (
     <div className="article-container">
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={
-          <Helmet
-            title={`${config.SITE_TITLE} | ${post.frontmatter.title}`}
-            bodyAttributes={
-              { class: "post-template" }
-            }
-            meta={[
-              { name: "description", content: post.frontmatter.description },
-              { property: "og:type", content: "website" },
-              { property: "og:title", content: post.frontmatter.title },
-              { property: "og:description", content: post.frontmatter.description },
-              { property: "og:url", content: config.DOMAIN },
-              { property: "og:image", content: coverImage },
-              { name: "twitter:card", content: "summary_large_image" },
-              { name: "twitter:title", content: post.frontmatter.title },
-              { name: "twitter:description", content: post.frontmatter.description },
-              { name: "twitter:url", content: config.DOMAIN },
-              { name: "twitter:image", content: coverImage },
-            ]}
-          />
-        }
         date={post.frontmatter.date}
         title={post.frontmatter.title}
         path={post.frontmatter.path}
         tags={post.frontmatter.tags}
+        cover={post.frontmatter.cover}
       />
       <SideBar />
     </div>

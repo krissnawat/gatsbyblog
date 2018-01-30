@@ -17,7 +17,6 @@ const menuLinks = [
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    {/* TODO: Remove page specific parts from meta for og and twitter. Move them to home page layout & blog page layout */}
     <Helmet
       link={[
         {
@@ -29,8 +28,17 @@ const TemplateWrapper = ({ children }) => (
       ]}
       meta={[
         { name: "HandheldFriendly", content: "True" },
-        { property: "og:site_name", content: config.SITE_TITLE },
-        { name: "twitter:site", content: "@" + config.TWITTER },
+        { name: 'description', content: config.SITE_DESCRIPTION },
+        { property: 'og:site_name', content: config.SITE_TITLE },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: config.SITE_TITLE },
+        { property: 'og:description', content: config.SITE_DESCRIPTION },
+        { property: 'og:url', content: config.DOMAIN },
+        { name: 'twitter:card', content: 'summary' },
+        { name: 'twitter:title', content: config.SITE_TITLE },
+        { name: 'twitter:description', content: config.SITE_DESCRIPTION },
+        { name: 'twitter:url', content: config.DOMAIN },
+        { name: 'twitter:site', content: '@' + config.TWITTER },
 
       ]}
     />
