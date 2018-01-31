@@ -34,8 +34,7 @@ export const SideBar = () => (
             </ul>
         </SideBox>
         <SideBox title="About" content={config.SITE_DESCRIPTION} className="about" />
-        <SideBox title="Affiliate Sponsor" className="sponsor" content={
-            <p>I'm constantly learning from a wide assortment of books & websites. The one subscription I never cancel though is Pluralsight. Their library is enormous & they have awesome learning paths that allow you to see how well you know your stuff. Check out my <a href="https://app.pluralsight.com/profile/mattferderer">Pluralsight profile to see what I'm learning &amp; how I rank</a>. If you're interested in giving them a try, they offer a <a href="http://shareasale.com/r.cfm?b=652749&amp;u=1522841&amp;m=53701&amp;urllink=&amp;afftrack=">10 day free trial</a>.</p>} />
+        <SideBox title="Affiliate Sponsor" className="sponsor" content={config.AFFILIATE} />
     </div>
 )
 
