@@ -34,7 +34,7 @@ export const SideBar = () => (
             </ul>
         </SideBox>
         <SideBox title="About" content={config.SITE_DESCRIPTION} className="about" />
-        <SideBox title="Affiliate Sponsor" className="sponsor" content={config.AFFILIATE} />
+        <SideBox title="Affiliate Sponsor" className="sponsor" content={<div dangerouslySetInnerHTML={{__html: config.AFFILIATE}} />} />
     </div>
 )
 
