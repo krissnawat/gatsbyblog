@@ -3,11 +3,7 @@ templateKey: blog-post
 path: /fix-git-self-signed-certificate-in-certificate-chain-on-windows
 title: Fix Git Self Signed Certificate in Certificate Chain on Windows
 date: 2017-10-07T12:12:23.000Z
-description:You are in the right place if you're trying to use `git clone` on a computer and running into one of the following errors:
-
-`SSL certificate problem: self signed certificate in certificate chain`
-
-`SSL certificate problem: unable to get local issuer certificate`
+description:You are in the right place if you're trying to use `git clone` on a computer and running into one of the following errors: `SSL certificate problem: self signed certificate in certificate chain` `SSL certificate problem: unable to get local issuer certificate`
 tags:
   - Security
 ---
