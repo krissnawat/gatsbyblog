@@ -3,20 +3,20 @@ templateKey: blog-post
 path: /fix-git-self-signed-certificate-in-certificate-chain-on-windows
 title: Fix Git Self Signed Certificate in Certificate Chain on Windows
 date: 2017-10-07T12:12:23.000Z
-description:You are in the right place if you're trying to use `git clone` on a computer and running into one of the following errors: `SSL certificate problem: self signed certificate in certificate chain` `SSL certificate problem: unable to get local issuer certificate`
+description: You are in the right place if you're trying to use git clone on a computer and running into one of the following errors. SSL certificate problem self signed certificate in certificate chain or SSL certificate problem unable to get local issuer certificate.
 tags:
   - Security
 ---
 
 You are in the right place if you're trying to use `git clone` on a computer and running into one of the following errors:
 
-`SSL certificate problem: self signed certificate in certificate chain`
+> *SSL certificate problem: self signed certificate in certificate chain*  
+> *SSL certificate problem: unable to get local issuer certificate*
 
-`SSL certificate problem: unable to get local issuer certificate`
 
-A popular workaround is to disable SSL Verification using `git config --global http.sslVerify false` but that creates huge security risks. SSL is a good thing & we should use it, even in cases where your company makes it difficult. The solution is to add the certificates to Git's trusted certificates. 
+A popular workaround is to disable SSL Verification using `git config --global http.sslVerify false` but that creates large security risks. SSL is a good thing & we should use it, even in cases where your company makes it difficult. The solution is to add the certificates to Git's trusted certificates. 
 
-A popular enterprise tool is Palo Alto that does a man in the middle on untrusted web traffic.  Let's look at an example using GitHub.
+I ran into a popular enterprise tool named Palo Alto that does a man in the middle on untrusted web traffic. While Palo Alto is great for securing your company's network, it can make using secure code repositories like GitHub more difficult if it intercepts the traffic. Let's look at an example using GitHub.
 
 Using Google Chrome I see that GitHub has an SSL on it. I can view more information by clicking the *Secure* tab in the address bar.
 
