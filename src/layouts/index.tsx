@@ -41,7 +41,7 @@ const TemplateWrapper = ({ children }) => (
 
       ]}
     >
-	<html lang="en">
+	<html lang="en" />
     </Helmet>
     <Header siteTitle={config.SITE_TITLE} tagList={menuLinks} />
     <main id="content" className="content clearfix" role="main">
