@@ -40,7 +40,9 @@ const TemplateWrapper = ({ children }) => (
         { name: "twitter:site", content: "@" + config.TWITTER },
 
       ]}
-    />
+    >
+	<html lang="en">
+    </Helmet>
     <Header siteTitle={config.SITE_TITLE} tagList={menuLinks} />
     <main id="content" className="content clearfix" role="main">
       {children()}
