@@ -67,7 +67,7 @@ module.exports = {
         headers: {
           "/*": [
             `Strict-Transport-Security: max-age=63072000; includeSubdomains; preload`,
-            `Content-Security-Policy-Report-Only: default-src 'none'; form-action 'none'; frame-ancestors 'none'; report-uri https://${REPORTURI}.report-uri.com/r/d/csp/wizard
+            `Content-Security-Policy-Report-Only: default-src 'none'; form-action 'none'; frame-ancestors 'none'; report-uri https://${config.REPORTURI}.report-uri.com/r/d/csp/wizard
             `,
           ],
         },
