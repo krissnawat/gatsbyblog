@@ -79,6 +79,7 @@ module.exports = {
               "script-src " +
                 "platform.twitter.com " +
                 "www.google-analytics.com " +
+                "ssl.google-analytics.com	" +
                 "'sha256-sOPJaJAyizbw4qATJmS9gVXZX8gWbcLhF0xS8rWviww=' " +
                 "'sha256-MXY44blwPHWMXg1B2Y7eAqC0crc+p74gapDWjiMqKxA=' " +
                 "'sha256-ml5NCCyvZVRMT9yuDNxgrqBCvXENW2FfNXw6uaG5t5M=' " +
@@ -92,6 +93,7 @@ module.exports = {
               "img-src " +
                 "stats.g.doubleclick.net " +
                 "www.google-analytics.com " +
+                "ssl.google-analytics.com	" +
                 "'self'" +
               "; " +
               "style-src " +
