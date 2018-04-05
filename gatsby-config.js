@@ -67,7 +67,7 @@ module.exports = {
         headers: {
           "/*": [
             `Strict-Transport-Security: max-age=63072000; includeSubdomains; preload`,
-            `Content-Security-Policy-Report-Only: default-src 'none'; form-action 'none'; frame-ancestors 'none'; report-uri https://${config.REPORTURI}.report-uri.com/r/d/csp/wizard
+            `Content-Security-Policy-Report-Only: form-action syndication.twitter.com platform.twitter.com; font-src fonts.gstatic.com 'self'; script-src platform.twitter.com www.google-analytics.com 'self'; frame-src syndication.twitter.com platform.twitter.com; img-src stats.g.doubleclick.net www.google-analytics.com 'self'; style-src fonts.googleapis.com 'self'; worker-src 'self'; report-uri https://${config.REPORTURI}.report-uri.com/r/d/csp/wizard
             `,
           ],
         },
