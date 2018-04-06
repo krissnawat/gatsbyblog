@@ -40,7 +40,7 @@ Insecure websites aren't only bad for your business, they're bad for your custom
 
 This becomes a huge problem for websites selling products and financial institutions. Customers will question doing business with websites that have any of the above warnings. There is also a high chance of getting called out on Twitter.
 
-<div style="margin:0 auto; max-width:500px"><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/FedExHelp">@FedExHelp</a> INSECURE login form on your homepage? Absolutely unacceptable! <a href="https://t.co/N8A2w1Re9v">pic.twitter.com/N8A2w1Re9v</a></p>&mdash; David (@kayhadrin) <a href="https://twitter.com/kayhadrin/status/873730104240754688">June 11, 2017</a></blockquote></div>
+[![A tweet "@FedExHelp INSECURE login form on your homepage? Absolutely unacceptable!"](img/twitter-fedex-help-insecure.jpg)](https://twitter.com/kayhadrin/status/873730104240754688)
 
 Creating a secure website is an easy process. You can get a free SSL Certificate at [Let's Encrypt](https://letsencrypt.org/). Once you have it installed, you can test your implementation with services like [SSL Labs](https://www.ssllabs.com/ssltest/). SSL Labs will give you suggestions on what to improve and how to do it. You can skip both these steps if you use a free service like [CloudFlare](https://cloudflare.com). CloudFlare is a CDN that has an awesome free tier. You not only get a free SSL certificate but their implementation scores high marks on SSL Labs' tests.
 
