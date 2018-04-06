@@ -1,6 +1,6 @@
 // const deepmerge = require('deepmerge');
 
-const cspPolicy = {
+const defaultPolicy = {
    "form-action": [
        "syndication.twitter.com",
     ],
@@ -42,15 +42,16 @@ const cspPolicy = {
     ],  
 }
 
-let cspReport = cspPolicy
-
 function reportToString(csp) {
     Object.keys(csp)
     .map(type => `${type} ${csp[type].join(" ")};`)
     .join(" ")
 }
 
+let cspPolicy = reportToString(defaultPolicy)
+let cspReport = reportToString(defaultPolicy)
+
 module.exports = {
-    policy: reportToString(cspPolicy),
-    report: reportToString(cspReport)
+    policy: cspPolicy,
+    report: cspReport
 }
