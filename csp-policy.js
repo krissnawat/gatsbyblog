@@ -48,10 +48,11 @@ function reportToString(csp) {
     .join(" ")
 }
 
-let cspPolicy = reportToString(defaultPolicy)
-let cspReport = reportToString(defaultPolicy)
+let cspPolicy = defaultPolicy
+let cspReport = defaultPolicy
 
 module.exports = {
     policy: cspPolicy,
-    report: cspReport
+    report: cspReport,
+    reportToString
 }
