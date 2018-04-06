@@ -1,6 +1,6 @@
 const config = require('./src/constants')
 const csp = require('./csp-policy')
-const cspReport = csp.reportToString(cspReport)
+const cspReport = csp.reportToString(csp.report)
 
 module.exports = {
   siteMetadata: {
