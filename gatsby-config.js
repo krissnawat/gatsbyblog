@@ -1,5 +1,6 @@
 const config = require('./src/constants')
 const csp = require('./csp-policy')
+
 module.exports = {
   siteMetadata: {
     title: config.SITE_TITLE,
