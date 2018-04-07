@@ -11,7 +11,7 @@ const defaultPolicy = {
     "script-src": [
         "www.google-analytics.com",
         "ssl.google-analytics.com",
-        "cdn.syndication.twimg.com",
+        // "cdn.syndication.twimg.com",
         "'sha256-07IlXpzTZ6R7aACQ5oRKmy8mu6HJ5zhxYR4cfnZHnME='",
         "'sha256-ml5NCCyvZVRMT9yuDNxgrqBCvXENW2FfNXw6uaG5t5M='",
         "'sha256-2+ExXDwjGk9C28Qn4PI5W7Ga2DIiAZDGLpNDsG4ljI8='",
@@ -46,6 +46,9 @@ const defaultPolicy = {
         "embed.plnkr.co",
         "'self'",
     ],
+    "object-src": [
+        "none"
+    ]
 }
 
 function reportToString(csp) {
@@ -54,8 +57,11 @@ function reportToString(csp) {
         .join(" ")
 }
 
+let reportPolicy = defaultPolicy
+reportPolicy["script-src"].push(["strict-dynamic", "unsafe-inline"])
+
 let cspPolicy = reportToString(defaultPolicy)
-let cspReport = reportToString(defaultPolicy)
+let cspReport = reportToString(reportPolicy)
 
 module.exports = {
     policy: cspPolicy,
