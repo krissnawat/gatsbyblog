@@ -1,6 +1,5 @@
 const config = require('./src/constants')
 const csp = require('./csp-policy')
-const cspReport = csp.reportToString(csp.report)
 
 module.exports = {
   siteMetadata: {
@@ -69,7 +68,7 @@ module.exports = {
         headers: {
           "/*": [
             `Strict-Transport-Security: max-age=63072000; includeSubdomains; preload`,
-            `Content-Security-Policy-Report-Only: ${cspReport} report-uri https://${config.REPORTURI}.report-uri.com/r/d/csp/wizard`,
+            `Content-Security-Policy-Report-Only: ${csp.report} report-uri https://${config.REPORTURI}.report-uri.com/r/d/csp/wizard`,
             `Expect-CT: max-age=0, report-uri=https://${config.REPORTURI}.report-uri.com/r/d/ct/reportOnly`,
             // `Content-Security-Policy: ${csp.policy} report-uri https://${config.REPORTURI}.report-uri.com/r/d/csp/enforce`,            
           ],

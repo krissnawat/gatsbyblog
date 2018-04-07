@@ -43,16 +43,15 @@ const defaultPolicy = {
 }
 
 function reportToString(csp) {
-    Object.keys(csp)
+    return Object.keys(csp)
     .map(type => `${type} ${csp[type].join(" ")};`)
     .join(" ")
 }
 
-let cspPolicy = defaultPolicy
-let cspReport = defaultPolicy
+let cspPolicy = reportToString(defaultPolicy)
+let cspReport = reportToString(defaultPolicy)
 
 module.exports = {
     policy: cspPolicy,
-    report: cspReport,
-    reportToString
+    report: cspReport
 }
