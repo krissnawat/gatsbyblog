@@ -47,7 +47,7 @@ const defaultPolicy = {
         "'self'",
     ],
     "object-src": [
-        "none"
+        "'none'"
     ]
 }
 
