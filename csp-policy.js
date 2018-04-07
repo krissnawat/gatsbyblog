@@ -58,7 +58,7 @@ function reportToString(csp) {
 }
 
 let reportPolicy = defaultPolicy
-reportPolicy["script-src"].push(["strict-dynamic", "unsafe-inline"])
+reportPolicy["script-src"].push("strict-dynamic", "unsafe-inline")
 
 let cspPolicy = reportToString(defaultPolicy)
 let cspReport = reportToString(reportPolicy)
