@@ -16,6 +16,8 @@ const defaultPolicy = {
         "'sha256-ml5NCCyvZVRMT9yuDNxgrqBCvXENW2FfNXw6uaG5t5M='",
         "'sha256-2+ExXDwjGk9C28Qn4PI5W7Ga2DIiAZDGLpNDsG4ljI8='",
         "'sha256-+/FADY2MCme7lW7/c1uoM+B69og2ipjumXIXhABs56I='",
+        "'sha256-NCUPBIxoZgNIUymb3WFRqlNXXL0kgpteEzvG5+wweS0='",
+        "'sha256-ffO3ab6wiPKq+4TM7QahHILxn7zAhOYhKGn3pzsu05U='",
         "'self'",
     ],
     "img-src": [
