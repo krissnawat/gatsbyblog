@@ -1,6 +1,9 @@
 // const deepmerge = require('deepmerge');
 
 const defaultPolicy = {
+    "default-src": [
+        "'self"
+    ],
     "form-action": [
         "syndication.twitter.com",
     ],
@@ -34,13 +37,7 @@ const defaultPolicy = {
     "style-src": [
         "fonts.googleapis.com",
         "platform.twitter.com",
-        "'sha256-pmQVgiMVejhZ15re6r5Yh22QXGU4AlBwsAVwTDL6aHU='",
-        "'sha256-xj63ZK7oO5xgCW9ogcQKzCTUDPyhnk4gIZXv2156YGA='",
-        "'sha256-XDCMG/9rTSTgqUXoiHD01Jc3+dKNKOwTUv91qnO/ikA='",
-        "'sha256-o2WUNgQbO8qhvIyJ8Ats2HpzDXfRhNSOzvshXu3kM3Y='",
-        "'sha256-h1hstgH9za97fYkD7tSPzrVVGy8t3YBBTA/3d+lBrwQ='",
-        "'sha256-vYd+FsML43MBXhP+pXOhW9h0Cdq43hkCe4Im/yyvhss='",
-        "'sha256-nIdXor1t/H/Ebgr/mggQHDcHTHYOpYBnWbfWvgmR4hM='",
+        "unsafe-inline",
         "'self'",
     ],
     "worker-src": [
