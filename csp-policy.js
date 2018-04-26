@@ -18,6 +18,7 @@ const defaultPolicy = {
         "'sha256-+/FADY2MCme7lW7/c1uoM+B69og2ipjumXIXhABs56I='",
         "'sha256-NCUPBIxoZgNIUymb3WFRqlNXXL0kgpteEzvG5+wweS0='",
         "'sha256-ffO3ab6wiPKq+4TM7QahHILxn7zAhOYhKGn3pzsu05U='",
+        "'sha256-zVpczxDlSslgkqaTDlIWARtL+cGYScz1SWw5F8lTeKc='",
         "'self'",
     ],
     "img-src": [
@@ -33,6 +34,12 @@ const defaultPolicy = {
         "fonts.googleapis.com",
         "platform.twitter.com",
         "'sha256-pmQVgiMVejhZ15re6r5Yh22QXGU4AlBwsAVwTDL6aHU='",
+        "'sha256-xj63ZK7oO5xgCW9ogcQKzCTUDPyhnk4gIZXv2156YGA='",
+        "'sha256-XDCMG/9rTSTgqUXoiHD01Jc3+dKNKOwTUv91qnO/ikA='",
+        "'sha256-o2WUNgQbO8qhvIyJ8Ats2HpzDXfRhNSOzvshXu3kM3Y='",
+        "'sha256-h1hstgH9za97fYkD7tSPzrVVGy8t3YBBTA/3d+lBrwQ='",
+        "'sha256-vYd+FsML43MBXhP+pXOhW9h0Cdq43hkCe4Im/yyvhss='",
+        "'sha256-nIdXor1t/H/Ebgr/mggQHDcHTHYOpYBnWbfWvgmR4hM='",
         "'self'",
     ],
     "worker-src": [
