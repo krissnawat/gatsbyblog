@@ -2,7 +2,7 @@
 
 const defaultPolicy = {
     "default-src": [
-        "'self"
+        "'self'"
     ],
     "form-action": [
         "syndication.twitter.com",
