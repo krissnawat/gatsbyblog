@@ -69,6 +69,7 @@ module.exports = {
           "/*": [
             `Strict-Transport-Security: max-age=63072000; includeSubdomains; preload`,
             `Expect-CT: max-age=0, report-uri=https://${config.REPORTURI}.report-uri.com/r/d/ct/reportOnly`,
+            `Link: </screen.css>; rel=preload; as=style`,
             `Content-Security-Policy-Report-Only: ${csp.report} report-uri https://${config.REPORTURI}.report-uri.com/r/d/csp/wizard`,
             //`Content-Security-Policy: ${csp.policy} upgrade-insecure-requests; report-uri https://${config.REPORTURI}.report-uri.com/r/d/csp/enforce`,            
           ],
