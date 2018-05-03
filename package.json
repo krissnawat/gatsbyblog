@@ -40,6 +40,8 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "develop": "gatsby develop",
+    "css": "node-sass src/sass/screen.scss -o static --precision 10 --output-style compressed",
+    "csswatch": "node-sass src/sass/screen.scss -o static --precision 10 --sourceComments --watch=\"/styles\" --recursive",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{src/**/*.js,gatsby-*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
