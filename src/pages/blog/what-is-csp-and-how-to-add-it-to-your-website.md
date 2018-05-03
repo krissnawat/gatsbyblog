@@ -58,7 +58,7 @@ Content-Security-Policy-Report-Only: default-src 'none'; form-action 'none'; fra
 
 ## Inline Scripts & CSS
 
-Inline JavaScript and CSS are often used on websites. A common CSS pattern is to inline your most important CSS that renders your 'above fold content' with `<style>` tags. This can help decrease the perceived rendering time. With [HTTP/2](https://mattferderer.com/switch-to-http2-the-easiest-way-to-speed-up-your-site) I would often argue against doing this. If you choose to use inline scripts, you have three options.
+Inline JavaScript and CSS are often used on websites. A common CSS pattern is to inline your most important CSS that renders your 'above fold content' with `<style>` tags. This can help decrease the perceived rendering time. With [HTTP/2](https://mattferderer.com/switch-to-http2-the-easiest-way-to-speed-up-your-site) I would often argue against doing this as it [tends to be slower](https://next.smashingmagazine.com/2017/04/guide-http2-server-push/#test-outcomes). If you choose to use inline scripts, you have three options.
 
 1. Get a SHA-256 hash of the script & add it to our CSP. Chrome's dev tools will even generate a SHA-256 for you in the console when it displays the CSP error. Adding it to our current CSP example would look like this:
 
