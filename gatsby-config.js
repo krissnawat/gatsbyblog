@@ -75,6 +75,9 @@ module.exports = {
           "/": [
             `Link: </screen.css>; rel=preload; as=style`,
           ],
+          "/*.html": [
+            `Type: HTML`,
+          ],
         },
       }
     },
