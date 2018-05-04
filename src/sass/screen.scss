@@ -1,7 +1,8 @@
 @import 'global-vars';
-@import 'font-awesome';
 @import 'screen-modified';
 @import 'webkid-modified';
+@import '../../node_modules/prismjs/themes/prism';
+@import 'font-awesome';
 
 .post-content img {
     padding: 0;
