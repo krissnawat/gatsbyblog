@@ -2,7 +2,7 @@
 templateKey: blog-post
 path: /what-is-csp-and-how-to-add-it-to-your-website
 title: What is CSP? Why & How to Add it to Your Website
-date: 2018-04-22T20:12:23.000Z
+date: 2018-05-04T20:12:23.000Z
 cover: /cover/what-is-a-csp.png
 description: Cross-Site Scripting (XSS) sucks! It's found in 2 out of 3 websites. A CSP policy can help you avoid most XSS attacks. Here's how to add one and monitor it with ease.
 tags:
