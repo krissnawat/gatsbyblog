@@ -5,8 +5,6 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import * as config from "../constants"
 
-import "../sass/screen.scss"
-
 const menuLinks = [
   { url: "/", title: "Home" },
   { url: "/tag/javascript", title: "JavaScript" },
@@ -18,6 +16,12 @@ const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
       link={[
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href:
+            "/screen.css",
+        },
         {
           rel: "stylesheet",
           type: "text/css",

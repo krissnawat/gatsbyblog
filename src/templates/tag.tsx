@@ -1,7 +1,6 @@
 import * as React from "react"
 import Helmet from "react-helmet"
 import * as config from "../constants"
-import "prismjs/themes/prism.css"
 import ArticleList from "../components/ArticleList"
 import SideBar from "../components/SideBar"
 

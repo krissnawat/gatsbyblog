@@ -72,6 +72,9 @@ module.exports = {
             `Content-Security-Policy-Report-Only: ${csp.report} report-uri https://${config.REPORTURI}.report-uri.com/r/d/csp/wizard`,
             //`Content-Security-Policy: ${csp.policy} upgrade-insecure-requests; report-uri https://${config.REPORTURI}.report-uri.com/r/d/csp/enforce`,            
           ],
+          "/": [
+            `Link: </screen.css>; rel=preload; as=style`,
+          ],
         },
       }
     },
@@ -102,12 +105,6 @@ module.exports = {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
         siteUrl: `https://mattferderer.com`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        precision: 8,
       },
     },
     {
