@@ -82,7 +82,7 @@ Content-Security-Policy-Report-Only: default-src 'none'; form-action 'none'; fra
 
 ## Cheer Up! Unsafe Inline Isn't the End of the World! Just Your Company. (Just kidding, sort of...)
 
-When first implementing your CSP, there is a good chance you will need to use unsafe-inline on either your style-src or script-src directives. You might even need to allow JavaScript's eval function with unsafe-eval. *\*Gasp!\**
+When first implementing your CSP, there is a good chance you will need to use unsafe-inline on either your style-src or script-src directives. You might even need to allow JavaScript's eval function with unsafe-eval. *Gasp!*
 
 > Just remember, a CSP should be one of many weapons in your security arsenal. It should not be your only weapon.
 

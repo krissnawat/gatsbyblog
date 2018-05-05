@@ -941,7 +941,7 @@ body:not(.post-template) .post-title {
     span{
         display:none;
 
-        @media #{$large} {
+        @media screen and (min-width: 1165px){
             display: inline;
             font-family:sans-serif;
             padding-left: .4em;
