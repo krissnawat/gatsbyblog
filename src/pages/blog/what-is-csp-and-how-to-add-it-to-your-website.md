@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 path: /what-is-csp-and-how-to-add-it-to-your-website
-title: What is CSP? Why & How to Add it to Your Website
+title: What is CSP? Why & How to Add it to Your Website.
 date: 2018-05-04T20:12:23.000Z
 cover: /cover/what-is-a-csp.png
 description: Cross-Site Scripting (XSS) sucks! It's found in 2 out of 3 websites. A CSP policy can help you avoid most XSS attacks. Here's how to add one and monitor it with ease.
@@ -80,7 +80,7 @@ Content-Security-Policy-Report-Only: default-src 'none'; form-action 'none'; fra
 
 3. Allow inline scripts by adding `'unsafe-inline'` to your policy & hang your head in shame. This allows inline scripts, which weakens your CSP & allows XSS attacks. Doing this should cause you to feel some sadness.
 
-## Cheer Up! Unsafe Inline Isn't the End of the World! Just Your Company. (Just kidding, sort of)
+## Cheer Up! Unsafe Inline Isn't the End of the World! Just Your Company. (Just kidding, sort of...)
 
 When first implementing your CSP, there is a good chance you will need to use unsafe-inline on either your style-src or script-src directives. You might even need to allow JavaScript's eval function with unsafe-eval. *\*Gasp!\**
 
