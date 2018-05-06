@@ -99,7 +99,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         path
-        date
+        date(formatString: "MMMM D, YYYY")
         title
         description
         cover
