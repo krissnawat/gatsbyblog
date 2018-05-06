@@ -60,7 +60,7 @@ export const pageQuery = graphql`
             tags
             templateKey
             path
-            date
+            date(formatString: "MMMM D, YYYY")
             title
             description
           }
