@@ -14,7 +14,9 @@ You can eliminate most XSS attacks with a CSP (Content Security Policy). A CSP l
 
 Since CSP can block one of the most common attacks known you think everyone would be using it, right? Nope! [Less than 2.5% of the top million visited sites use it](https://scotthelme.co.uk/alexa-top-1-million-analysis-february-2018/). 
 
-> For most websites security is an afterthought, until someone steals all their data. Then the public rages on social media. The typical company response is to fire someone & promise to put security first, all while crossing their fingers behind their back.
+[![Dilbert Comic. Click link for a transcript.](img/dt180508.gif)](http://dilbert.com/strip/2018-05-08)
+
+For most websites security is an afterthought, until someone steals all their data. Then the public rages on social media. The typical company response is to fire someone & promise to put security first, all while crossing their fingers behind their back.
 
 Let's take a look at how we can avoid such a mess.
 
