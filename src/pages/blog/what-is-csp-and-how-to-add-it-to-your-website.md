@@ -158,6 +158,8 @@ Twitter has a great package for Ruby on Rails developers to set [secure default 
 
 [GitHub's CSP Journey](https://githubengineering.com/githubs-csp-journey/) is a great article on the issues they faced while implementing their CSP.
 
+[Google's CSP Evaluator](https://csp-evaluator.withgoogle.com/) is a great tool for testing your CSP.
+
 This [CSP Quick Reference Guide](https://content-security-policy.com/) & Scott Helme's [CSP Cheat Sheet](https://scotthelme.co.uk/csp-cheat-sheet/) are excellent resources to glance at when implementing a CSP.
 
 If you are in the need of extra precautions for specific pages, check out [Sandbox mode](https://html.spec.whatwg.org/dev/origin.html#sandboxing).
