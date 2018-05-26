@@ -10,6 +10,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
+    // {
+    //   resolve: `gatsby-plugin-sass`,
+    //   options: {
+    //     precision: 8,
+    //     outputStyle: "compressed"
+    //   }  
+    // },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
