@@ -28,6 +28,18 @@ const TemplateWrapper = ({ children }) => (
           href:
             "//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400",
         },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href:
+            "//cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism.min.css",
+        },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href:
+            "//fonts.googleapis.com/css?family=Roboto:400,500,700|Material+Icons",
+        },
       ]}
       meta={[
         { name: "HandheldFriendly", content: "True" },

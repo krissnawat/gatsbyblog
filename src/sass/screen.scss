@@ -1,9 +1,14 @@
+@import '../../node_modules/react-md/src/scss/react-md';
+@include react-md-cards;
+@include react-md-avatars;
+@include react-md-snackbars;
+
+
+
 @import 'global-vars';
 @import 'screen-modified';
 @import 'webkid-modified';
-@import '../../node_modules/prismjs/themes/prism';
 @import 'font-awesome';
-
 .post-content img {
     padding: 0;
 }

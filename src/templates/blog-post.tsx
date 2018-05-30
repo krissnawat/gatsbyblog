@@ -8,6 +8,7 @@ import ArticleTags from "../components/ArticleTags"
 import ArticleFooter from "../components/ArticleFooter"
 import * as config from "../constants"
 import { createLinkToTag } from "../helpers"
+import Comments from "../components/Comments"
 
 export const Content = ({ content, className }) => <div className={className}>{content}</div>
 
@@ -19,6 +20,7 @@ export const HTMLContent = ({ content, className }) => <div
 export const BlogPostTemplate = ({ content, contentComponent, description, title, date, tags, path, cover }) => {
   const PostContent = contentComponent || Content
   const d = new Date(date)
+  const firstTag = (tags.length > 0) ? tags[0] : config.DOMAIN
   const dateTime = d.getFullYear().toString() + "-" +
     padStart((d.getMonth() + 1).toString(), 2, "0") + "-" +
     padStart(d.getDate().toString(), 2, "0")
@@ -61,6 +63,11 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
         <ArticleFooter
           link={path}
           title={title}
+        />
+        <Comments 
+          link={path} 
+          title={title}
+          category_id={firstTag}
         />
       </article>
     </div>
