@@ -17,10 +17,10 @@ export const HTMLContent = ({ content, className }) => <div
   dangerouslySetInnerHTML={{ __html: content }}
 />
 
-export const BlogPostTemplate = ({ content, contentComponent, description, title, date, tags, path, cover }) => {
+export const BlogPostTemplate = ({ content, contentComponent, description, title, date, tags, path, cover }: BlogPostTemplateProps) => {
   const PostContent = contentComponent || Content
   const d = new Date(date)
-  const firstTag = (tags.length > 0) ? tags[0] : config.DOMAIN
+  const firstTag = (tags!== null && tags.length > 0) ? tags[0] : config.DOMAIN
   const dateTime = d.getFullYear().toString() + "-" +
     padStart((d.getMonth() + 1).toString(), 2, "0") + "-" +
     padStart(d.getDate().toString(), 2, "0")
@@ -115,3 +115,13 @@ export const pageQuery = graphql`
     }
   }
 `
+export interface BlogPostTemplateProps {
+  content: any
+  contentComponent: any
+  description: string
+  title: string
+  date: string
+  tags: string[] | null
+  path: string
+  cover: string
+}
