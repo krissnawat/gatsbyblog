@@ -1,6 +1,6 @@
 import * as React from "react"
 import * as config from "../../constants"
-import * as ReactDisqusComments from "react-disqus-comments";
+import Disqus from "react-disqus-comments";
 import Card from "react-md/lib/Cards/Card";
 import CardTitle from "react-md/lib/Cards/CardTitle";
 import CardText from "react-md/lib/Cards/CardText";
@@ -62,7 +62,7 @@ class Comments extends React.Component< CommentProps, CommentState>{
           expander={this.state.mobile}
         />
         <CardText expandable={this.state.mobile}>
-          <ReactDisqusComments
+          <Disqus
             shortname={config.DISQUS}
             identifier={title}
             title={title}
