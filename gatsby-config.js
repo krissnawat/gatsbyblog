@@ -10,7 +10,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-sass`,
+    // {
+    //   resolve: `gatsby-plugin-sass`,
+    //   options: {
+    //     precision: 8,
+    //     outputStyle: "compressed"
+    //   }  
+    // },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -139,6 +145,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          `gatsby-remark-autolink-headers`,
           "gatsby-remark-copy-linked-files",
           {
             resolve: `gatsby-remark-prismjs`,
