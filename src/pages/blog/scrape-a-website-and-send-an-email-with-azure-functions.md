@@ -55,14 +55,61 @@ only .NET Framework 4.6 is supported on Azure Functions. https://docs.microsoft.
 Test scrapping your site.
 
 ```csharp
+#r "SendGrid"
 using System.Net;
 using HtmlAgilityPack;
+using SendGrid.Helpers.Mail;
 
-public static async Task Run(TimerInfo myTimer, TraceWriter log)
+public static void Run(TimerInfo myTimer, TraceWriter log, out Mail message)
 {
+    var comics = GetComics().Result;
+    try{
+        log.Info(comics);
+        message = new Mail {        
+            Subject = "New Comics"
+        };
+
+        var personalization = new Personalization();
+        personalization.AddTo(new Email("matt@mattferderer.com"));   
+
+        Content content = new Content
+        {
+            Type = "text/html",
+            Value = comics
+        };
+        message.AddContent(content);
+        message.AddPersonalization(personalization);
+    } catch (Exception e) {
+        log.Info(e.ToString());
+        message = SendEmail(e.ToString());
+    }
+
+}
+
+public static async Task<string> GetComics() {
+    var nancy = await GetNancyComic();
+    var dilbert = await GetDilbertComic();
+    var xkcd = XKCDPublishedYesterday() ? await GetXKCD() : "";
+    return nancy + dilbert + xkcd;
+}
+
+public static Boolean XKCDPublishedYesterday() {
+    switch (DateTime.Now.DayOfWeek.ToString())
+    {
+        case("Tuesday"):
+        case("Thursday"):
+        case("Friday"):
+            return true;
+        default:
+            return false;
+    }
+} 
+
+public static async Task<string> GetNancyComic() {
+    string url = "https://www.gocomics.com/nancy/"+DateTime.Now.ToString(("yyyy/MM/dd"));
+
     HttpClient client = new HttpClient();
- 
-    string html = await client.GetStringAsync("https://www.gocomics.com/nancy/"+DateTime.Now.ToString(("yyyy/MM/dd")));    
+    string html = await client.GetStringAsync(url);    
  
     HtmlDocument doc = new HtmlDocument();
     doc.LoadHtml(html); 
@@ -76,9 +123,88 @@ public static async Task Run(TimerInfo myTimer, TraceWriter log)
         .Where(x => x.Name == "src")
         .FirstOrDefault()
         .Value;
- 
-    log.Info(image);
+
+    return string.Format("<p><a href=\"{0}\"><img src=\"{1}\"></a></p>", url, image);
 }
+
+public static async Task<string> GetDilbertComic() {
+    string url = "http://dilbert.com/strip/"+DateTime.Now.ToString(("yyyy-MM-dd"));
+
+    HttpClient client = new HttpClient();
+    string html = await client.GetStringAsync(url);    
+ 
+    HtmlDocument doc = new HtmlDocument();
+    doc.LoadHtml(html); 
+     
+    var image = doc.DocumentNode
+        .SelectNodes("//img")
+        .Where(x => x.Attributes.Contains("class") && x.Attributes["class"].Value.Contains("img-comic"))
+        .FirstOrDefault();
+
+    var imgSrc = image
+        .Attributes
+        .Where(x => x.Name == "src")
+        .FirstOrDefault()
+        .Value;
+
+    var imgTitle = image
+        .Attributes
+        .Where(x => x.Name == "alt")
+        .FirstOrDefault()
+        .Value;
+
+    return string.Format("<p>{0}<br /><a href=\"{1}\"><img src=\"{2}\"></a></p>", imgTitle, url, imgSrc);
+}
+
+public static async Task<string> GetXKCD() {
+    HttpClient client = new HttpClient();
+    var url = "https://xkcd.com/";
+
+    string html = await client.GetStringAsync(url);
+
+    HtmlDocument doc = new HtmlDocument();
+    doc.LoadHtml(html);
+
+    var image = doc.DocumentNode
+        .SelectNodes("//div")
+        .Where(x => x.Attributes.Contains("id") && x.Attributes["id"].Value.Contains("comic"))
+        .FirstOrDefault()
+        .Element("img");
+
+    var imgSrc = image
+        .Attributes
+        .Where(x => x.Name == "src")
+        .FirstOrDefault()
+        .Value;
+
+    var imgTitle = image
+        .Attributes
+        .Where(x => x.Name == "title")
+        .FirstOrDefault()
+        .Value;
+
+    return string.Format("<p>{0}<br /><a href=\"{1}\"><img src=\"https:{2}\"></a></p>", imgTitle, url, imgSrc);
+}
+
+public static Mail SendEmail(string input) {
+        var message = new Mail
+    {        
+        Subject = "New Comics"          
+    };
+
+    var personalization = new Personalization();
+    personalization.AddTo(new Email("matt@mattferderer.com"));   
+
+    Content content = new Content
+    {
+        Type = "text/html",
+        Value = input
+    };
+    message.AddContent(content);
+    message.AddPersonalization(personalization);
+    return message;
+}
+
 
 ```
 
@@ -107,3 +233,9 @@ Fill out the From address & subject as well if you want defaults for your functi
 Your output settings will now be added to your function.json file that Azure created for you if you did a Timer Trigger app. You can also find your schedule using a Cron pattern in there. 
 
 We'll now adjust our prior code. 
+
+## TODO
+
+Note debugging locally - VS Code - https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions
+
+Visual Studio - https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs
