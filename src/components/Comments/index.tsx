@@ -66,7 +66,7 @@ class Comments extends React.Component< CommentProps, CommentState>{
             shortname={config.DISQUS}
             identifier={title}
             title={title}
-            url={link}
+            url={config.DOMAIN+link}
             onNewComment={this.notifyAboutComment}
           />
         </CardText>
