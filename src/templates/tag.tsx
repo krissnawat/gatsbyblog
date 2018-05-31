@@ -6,7 +6,13 @@ import SideBar from "../components/SideBar"
 
 export const TagTemplate = ({pathContext, data}) => {
     const tag = pathContext.tag
-    const articles = data.allMarkdownRemark.edges.map(({node}) => (
+    const now = new Date();
+
+    const articles = data.allMarkdownRemark.edges
+    .filter((post) => 
+      new Date(post.node.frontmatter.date) < now
+    )
+    .map(({node}) => (
       {
         url: node.frontmatter.path,
         title: node.frontmatter.title,

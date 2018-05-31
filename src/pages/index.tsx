@@ -8,9 +8,13 @@ import * as config from "../constants"
 export const IndexPage = (props) => {
   const { data } = props
   const { edges: posts } = data.allMarkdownRemark
+  const now = new Date();
 
   const list = posts
-    .filter((post) => post.node.frontmatter.templateKey === "blog-post")
+    .filter((post) => 
+      post.node.frontmatter.templateKey === "blog-post" && 
+      new Date(post.node.frontmatter.date) < now
+    )
     .map(({ node: post }) => ({
       url: post.frontmatter.path,
       title: post.frontmatter.title,
