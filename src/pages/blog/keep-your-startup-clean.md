@@ -9,11 +9,12 @@ tags:
   - .NET
 ---
 
-When I open up a .NET Core application I typically start at the Startup file. Unfortunately there is an ugly pattern out there that makes these look a long spaghetti code mess. They often look something like this:
+When I open a .NET Core application I typically start at the Startup file. Unfortunately there is an ugly pattern out there that makes these look like a long spaghetti code mess. They often look something like this:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
+
 
     services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -69,16 +70,15 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-This is not fun to read. Since we spend most of our time reading code, it's not great to maintain. By using extension methods you can clean this up to something more readable.
+This is not fun to read. Since we spend most of our time reading code, it's not great to maintain either. By using extension methods you can clean this up to something more readable.
 
-Adding a simple file named something like `servicesExtensions.cs`, you can extend the IServiceCollection and add custom methods. Here's a quick example.
+Add a simple file named something like `ServiceCollectionExtensions.cs`. Then create a public static class with IServiceCollection extension methods. Here's a quick example.
 
 ```csharp
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddDataStores(this IServiceCollection services, IConfiguration configuration)
     {
-        //TODO: New EF Core 2.0 Feature Data Pooling - https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-2.0#dbcontext-pooling
         services
             .AddDbContextPool<ApplicationDbContext>(options =>
             {
