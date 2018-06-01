@@ -3,7 +3,7 @@ templateKey: blog-post
 path: /keep-your-startup-clean
 title: Keep Your Startup Clean
 date: 2017-06-02T00:38:00.000Z
-description: 
+description: Don't let your Startup.cs file turn into a mess. Use extension methods to keep it clean.
 tags:
   - .NET Core
   - .NET
@@ -58,7 +58,6 @@ public void ConfigureServices(IServiceCollection services)
       configureOptions.SaveToken = true;
     });
 
-    // api user claim policy
     services.AddAuthorization(options =>
     {
       options.AddPolicy("AuthorizedApiUsr", policy => policy.RequireClaim(Constants.Strings.JwtClaimIdentifiers.Rol, Constants.Strings.JwtClaims.ApiAccess));
