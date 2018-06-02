@@ -2,7 +2,7 @@
 templateKey: blog-post
 path: /keep-your-startup-clean
 title: Keep Your Startup Clean
-date: 2017-06-02T00:38:00.000Z
+date: 2017-12-02T00:38:00.000Z
 description: Don't let your Startup.cs file turn into a mess. Use extension methods to keep it clean.
 tags:
   - .NET Core
