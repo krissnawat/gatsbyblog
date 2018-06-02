@@ -9,7 +9,7 @@ tags:
   - .NET
 ---
 
-When I open a .NET Core application I typically start at the Startup file. Unfortunately there is an ugly pattern out there that makes these look like a long spaghetti code mess. They often look something like this:
+When I open a .NET Core application for the first time I start by reading the Startup file. Unfortunately there is an ugly pattern out there that turns this into a spaghetti code mess. They often look something like this:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -69,7 +69,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-This is not fun to read. Since we spend most of our time reading code, it's not great to maintain either. By using extension methods you can clean this up to something more readable.
+This isn't fun to read. Since we spend most of our time reading code, it's not great to maintain either. By using extension methods you can clean this up to something more readable.
 
 Add a simple file named something like `ServiceCollectionExtensions.cs`. Then create a public static class with IServiceCollection extension methods. Here's a quick example.
 
