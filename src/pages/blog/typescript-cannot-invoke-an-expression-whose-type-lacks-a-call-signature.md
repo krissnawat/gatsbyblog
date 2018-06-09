@@ -7,6 +7,7 @@ description: I have a love|hate relationship with TypeScript. I love it when it 
 tags:
   - TypeScript
   - JavaScript
+  - Errors
 ---
 I have a love|hate relationship with TypeScript. I love it when it works & hate it when it doesn't do what I think it should. I was trying to clean up some code and wrote the following:
 
