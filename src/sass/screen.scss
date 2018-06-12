@@ -20,5 +20,6 @@
 }
 
 code[class*=language-], pre[class*=language-]{
-    white-space: pre-wrap;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
 }

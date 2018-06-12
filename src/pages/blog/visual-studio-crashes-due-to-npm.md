@@ -7,6 +7,7 @@ description: I've just started using Visual Studio and so far the experience has
 tags:
   - Visual Studio
   - NPM
+  - Errors
 ---
 ## The Issue
 I've just started using Visual Studio and so far the experience has been great. The Web Essentials plugin makes web development a lot better. Unfortunately Visual Studio has not been playing nice when I select to "Open a Website" that is using NPM. My assumption is that the issue is a result of NPM's deeply nested directory structure and Microsoft's software typically having limits on the length of directory paths. There is a long debate on this topic on [GitHub](https://github.com/joyent/node/issues/6960#issuecomment-46704998).
