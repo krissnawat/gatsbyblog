@@ -11,25 +11,31 @@ tags:
   - Azure
 ---
 
+TODO SendGrid affiliate??
+
+TODO Change code to my site
+
+TODO Change directions to numbered list
+
 The ability to create instructions & watch a computer do your bidding is often the thing that gets people addicted to writing software. These little one off tasks give you super human abilities to push a button & watch the magic unfold. One of the annoying things is you now need to run a computer 24/7. Otherwise you'll sit there waving your magic wand around watching nothing happen.
 
 Azure, AWS & other providers offer awesome cloud services where you can run your magical instructions in the cloud without paying for a server to be on all the time. In fact, since you pay only for when you actually use it, a task that runs a few seconds once a day costs you almost nothing.
 
-Let's take a look at how to create a task that get some data by making some requests to websites & then sending that data back to us via an e-mail once a day. 
+Let's take a look at how to create a task that get some data by making some requests to websites & then sending that data back to us via an e-mail once a day.
 
 ## Wizard, Meet Azure Functions
 
-TODO: Azure offers a free service....
+Login to Azure and click to *Create a Resource*. Here you can search for *Functions* and add a *Function App*.
 
-Once you've signed up for an account, click to *Create a Resource*. Here you can search for *Functions* and add an *Azure Function*.
+On the next screen you can give the app a name, select a resource group, etc. If you're new to this, drop me a line in the comments & I can walk you through these steps. When your done, click *Create*.
 
-TODO: Fill in these steps....
+Once Azure has your new resources ready, you can either click the pop up that appears or go to *All Resources* and find your Function App there. The Function App has a lightning bolt icon.
 
-Click the + sign that appears when you hover on Fuctions.
+On the next screen, hover over *Functions* on the left menu, and click the + sign that appears.
 
 ![Azure Functions Overview Screen.](img/scrape-a-website-and-send-an-email-with-azure-functions-1.gif)
 
-Select *Timer* if you want to do this every so often or *Webhook+API* if you want a URL to send a request to so you can do it on demand. Also make sure C# is selected as the language below.
+Select *Timer* if you want to do this on a schedule or *Webhook+API* if you want a URL to send a request to so you can do it on demand. Also make sure C# is selected as the language below.
 
 On the right side, click View Files.
 
@@ -49,10 +55,9 @@ Add a new `project.json` file and add the following text and then click the Save
 }
 ```
 
-only .NET Framework 4.6 is supported on Azure Functions. https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-csharp
+Note: Currently only [.NET Framework 4.6 is supported on Azure Functions]( https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-csharp#using-nuget-packages).
 
-
-Test scrapping your site.
+For this demo, we'll scrape my website.
 
 ```csharp
 #r "SendGrid"
@@ -64,7 +69,6 @@ public static void Run(TimerInfo myTimer, TraceWriter log, out Mail message)
 {
     var comics = GetComics().Result;
     try{
-        log.Info(comics);
         message = new Mail {        
             Subject = "New Comics"
         };
@@ -208,9 +212,9 @@ public static Mail SendEmail(string input) {
 
 ```
 
-Now let's send this via email. 
+Before we can get this to send an e-mail correctly we need to provide an e-mail service to our Azure account. I recommend SendGrid.
 
-SendGrid affiliate?? SendGrid offers easy Azure integration & a free developer plan. Beyond that, they have excellent service. For these reasons, they're my go to for fun apps, dev apps & especially production apps.
+SendGrid offers easy Azure integration & a free developer plan. Beyond that, they have excellent service. For these reasons, they're my go to for fun apps, dev apps & especially production apps.
 
 Create a SendGrid account and then go to settings > API Keys. Click create an API Key. Give it a name. Restricted access with Mail Send is all that is needed for access. Copy your API key.
 
