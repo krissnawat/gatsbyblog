@@ -67,16 +67,16 @@ using SendGrid.Helpers.Mail;
 
 public static void Run(TimerInfo myTimer, TraceWriter log, out Mail message)
 {
-    var comics = GetComics().Result;
+    var comics = GetLatestArticle().Result;
     try{
-        message = new Mail {        
-            Subject = "New Comics"
+        message = new Mail {
+            Subject = "Latest Article"
         };
 
         var personalization = new Personalization();
-        personalization.AddTo(new Email("matt@mattferderer.com"));   
+        personalization.AddTo(new Email("matt@mattferderer.com"));
 
-        Content content = new Content
+        var content = new Content
         {
             Type = "text/html",
             Value = comics
@@ -90,114 +90,45 @@ public static void Run(TimerInfo myTimer, TraceWriter log, out Mail message)
 
 }
 
-public static async Task<string> GetComics() {
-    var nancy = await GetNancyComic();
-    var dilbert = await GetDilbertComic();
-    var xkcd = XKCDPublishedYesterday() ? await GetXKCD() : "";
-    return nancy + dilbert + xkcd;
-}
-
-public static Boolean XKCDPublishedYesterday() {
-    switch (DateTime.Now.DayOfWeek.ToString())
-    {
-        case("Tuesday"):
-        case("Thursday"):
-        case("Friday"):
-            return true;
-        default:
-            return false;
-    }
-} 
-
-public static async Task<string> GetNancyComic() {
-    string url = "https://www.gocomics.com/nancy/"+DateTime.Now.ToString(("yyyy/MM/dd"));
+public static async Task<string> GetLatestArticle() {
+    string url = "https://mattferderer.com/";
 
     HttpClient client = new HttpClient();
-    string html = await client.GetStringAsync(url);    
- 
-    HtmlDocument doc = new HtmlDocument();
-    doc.LoadHtml(html); 
-     
-    var image = doc.DocumentNode
-        .SelectNodes("//picture")
-        .Where(x => x.Attributes.Contains("class") && x.Attributes["class"].Value.Contains("item-comic-image"))
-        .FirstOrDefault()
-        .Element("img")
-        .Attributes
-        .Where(x => x.Name == "src")
-        .FirstOrDefault()
-        .Value;
-
-    return string.Format("<p><a href=\"{0}\"><img src=\"{1}\"></a></p>", url, image);
-}
-
-public static async Task<string> GetDilbertComic() {
-    string url = "http://dilbert.com/strip/"+DateTime.Now.ToString(("yyyy-MM-dd"));
-
-    HttpClient client = new HttpClient();
-    string html = await client.GetStringAsync(url);    
- 
-    HtmlDocument doc = new HtmlDocument();
-    doc.LoadHtml(html); 
-     
-    var image = doc.DocumentNode
-        .SelectNodes("//img")
-        .Where(x => x.Attributes.Contains("class") && x.Attributes["class"].Value.Contains("img-comic"))
-        .FirstOrDefault();
-
-    var imgSrc = image
-        .Attributes
-        .Where(x => x.Name == "src")
-        .FirstOrDefault()
-        .Value;
-
-    var imgTitle = image
-        .Attributes
-        .Where(x => x.Name == "alt")
-        .FirstOrDefault()
-        .Value;
-
-    return string.Format("<p>{0}<br /><a href=\"{1}\"><img src=\"{2}\"></a></p>", imgTitle, url, imgSrc);
-}
-
-public static async Task<string> GetXKCD() {
-    HttpClient client = new HttpClient();
-    var url = "https://xkcd.com/";
-
     string html = await client.GetStringAsync(url);
 
     HtmlDocument doc = new HtmlDocument();
     doc.LoadHtml(html);
 
-    var image = doc.DocumentNode
+    var articles = doc.DocumentNode
         .SelectNodes("//div")
-        .Where(x => x.Attributes.Contains("id") && x.Attributes["id"].Value.Contains("comic"))
-        .FirstOrDefault()
-        .Element("img");
+        .Where(x => x.Attributes.Contains("id") && x.Attributes["id"].Value.Contains("articles"))
+        .FirstOrDefault();
 
-    var imgSrc = image
+    var link = articles
+        .Element("a")
         .Attributes
-        .Where(x => x.Name == "src")
+        .Where(a => a.Name == "href")
         .FirstOrDefault()
         .Value;
 
-    var imgTitle = image
-        .Attributes
-        .Where(x => x.Name == "title")
+    var text = articles
+        .SelectNodes("//header")
+        .Where(x => x.Attributes.Contains("class") && x.Attributes["class"].Value.Contains("post-header"))
         .FirstOrDefault()
-        .Value;
+        .Element("h2")
+        .InnerText;
 
-    return string.Format("<p>{0}<br /><a href=\"{1}\"><img src=\"https:{2}\"></a></p>", imgTitle, url, imgSrc);
+    return $"Latest Article: <a href=\"{url}\">{text}</a>";
 }
 
 public static Mail SendEmail(string input) {
-        var message = new Mail
-    {        
-        Subject = "New Comics"          
+    var message = new Mail
+    {
+        Subject = "New Comics"
     };
 
     var personalization = new Personalization();
-    personalization.AddTo(new Email("matt@mattferderer.com"));   
+    personalization.AddTo(new Email("matt@mattferderer.com"));
 
     Content content = new Content
     {
