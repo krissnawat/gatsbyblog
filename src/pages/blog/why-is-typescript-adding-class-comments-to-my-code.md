@@ -5,8 +5,8 @@ title: Why is TypeScript Adding Class Comments to my Code
 date: 2018-06-02T20:12:23.000Z
 description: I noticed all my TypeScript compiled files had been modified after a recent change. I hadn't changed anything in them so this gave me some concern. What I found was TypeScript added a /** @class */ comment to the modified files.
 tags:
-  - VS Code
-  - Editors
+  - TypeScript
+  - JavaScript
 ---
 
 I noticed all my TypeScript compiled files had been modified after a recent change. I hadn't changed anything in them so this gave me some concern. What I found was TypeScript added a `/** @class */` comment to the modified files. This made no sense to me, so I did some digging.
