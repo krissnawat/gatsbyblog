@@ -4,7 +4,7 @@ path: /host-blazor-on-netlify
 title: Hosting Blazor on Netlify
 date: 2018-06-21T20:12:23.000Z
 cover: /cover/host-blazor-on-netlify.png
-description: Since Blazor is a frontend framework, we can host our Blazor apps on any serverless or static web host. The only requirement is that we can add minor configuration to redirect urls so that all urls point to our index.html page. Netlify fits this perfectly & also happens to be my favorite host for static websites.
+description: Since Blazor is a frontend framework, we can host our Blazor apps on any serverless or static web host. The only requirement is that we can add minor configuration to redirect URLs so that all URLs point to our index.html page. Netlify fits this perfect. Netlify also happens to be my favorite host for static websites.
 tags:
   - Blazor
   - Netlify
@@ -12,7 +12,7 @@ tags:
   - Serverless
 ---
 
-Since Blazor is a frontend framework, we can host our Blazor apps on any serverless or static web host. The only requirement is that we can add minor configuration to redirect urls so that all urls point to our index.html page. Netlify fits this perfectly & also happens to be my favorite host for static websites.
+Since Blazor is a frontend framework, we can host our Blazor apps on any serverless or static web host. The only requirement is that we can add minor configuration to redirect URLs so that all URLs point to our index.html page. [Netlify](https://www.netlify.com/) fits this perfect. [Netlify](https://www.netlify.com/) also happens to be my favorite host for static websites.
 
 ## Prerequisites
 
@@ -42,9 +42,9 @@ If you publish on another static host or a serverless environment, check their d
 
 ## Publishing to Netlify
 
-Once we're done with that, the easiest way to deploy to Netlify is to add this to a GitHub repo.
+Once we're done with that, the easiest way to deploy to [Netlify](https://www.netlify.com/) is to add this to a GitHub repo.
 
-Netlify can't build this project for us. So we'll need to do that & add the files to our repository.
+Netlify can't build this project for us since they can't build dotnet. We'll need to handle building & adding the files to our repository.
 
 By default the .gitignore file created with our project ignores the default build directory. You can modify your .gitignore file to not ignore the default release directory. Then you can run `dotnet publish -c release`.
 
@@ -52,7 +52,7 @@ Another option is to publish to a different directory using the `-o` parameter. 
 
 Once you've done either of the above, push your changes to a GitHub repository.
 
-After that you can go to Netlify & create a new site from your GitHub repository. After linking your site to your repo, you'll be prompted with deploy settings. You can ignore the build command. For the publish directory, add the directory you published to. It should look like this:
+After that you can go to Netlify & create a new site from your GitHub repository. After linking your site to your repo, you're prompted with deploy settings. You can ignore the build command. For the publish directory, add the directory you published to. It should look like this:
 
 ```text
 _framework
@@ -62,6 +62,6 @@ _redirects
 index.html
 ```
 
- Everytime you push changes to your repository, Netlify will re-deploy them.
+ Every time you push changes to your repository, Netlify will re-deploy them.
 
  If you run into issues or you deploy this elsewhere, let me know in the comments below! 
