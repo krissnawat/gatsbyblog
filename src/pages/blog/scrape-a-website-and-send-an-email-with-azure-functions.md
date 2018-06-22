@@ -13,17 +13,11 @@ tags:
 
 TODO SendGrid affiliate??
 
-TODO Change code to my site
+TODO Change code to my site... Get h2 & link... Use SendEmail instead of duplicating (DRY)
 
-TODO Change directions to numbered list
+Let's take a look at how to create a task that gets data by making a request to a website & then sending select data back to us via an e-mail once a day.
 
-The ability to create instructions & watch a computer do your bidding is often the thing that gets people addicted to writing software. These little one off tasks give you super human abilities to push a button & watch the magic unfold. One of the annoying things is you now need to run a computer 24/7. Otherwise you'll sit there waving your magic wand around watching nothing happen.
-
-Azure, AWS & other providers offer awesome cloud services where you can run your magical instructions in the cloud without paying for a server to be on all the time. In fact, since you pay only for when you actually use it, a task that runs a few seconds once a day costs you almost nothing.
-
-Let's take a look at how to create a task that get some data by making some requests to websites & then sending that data back to us via an e-mail once a day.
-
-## Wizard, Meet Azure Functions
+## Create an Azure Function
 
 Login to Azure and click to *Create a Resource*. Here you can search for *Functions* and add a *Function App*.
 
@@ -51,13 +45,13 @@ Add a new `project.json` file and add the following text and then click the Save
         "HtmlAgilityPack": "1.8.2"
       }
     }
-   }
+  }
 }
 ```
 
-Note: Currently only [.NET Framework 4.6 is supported on Azure Functions]( https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-csharp#using-nuget-packages).
+*Note: Currently only [.NET Framework 4.6 is supported on Azure Functions]( https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-csharp#using-nuget-packages). .Net Core is available in preview. If at any later time you wish to use .Net Core instead, adjust the framework snippet above. The following code should require minimum changes if any.*
 
-For this demo, we'll scrape my website.
+For this demo & purposes of legality, we'll scrape [my blog's homepage](https://mattferderer.com).
 
 ```csharp
 #r "SendGrid"
@@ -67,7 +61,7 @@ using SendGrid.Helpers.Mail;
 
 public static void Run(TimerInfo myTimer, TraceWriter log, out Mail message)
 {
-    var comics = GetLatestArticle().Result;
+    var latestArticle = GetLatestArticle().Result;
     try{
         message = new Mail {
             Subject = "Latest Article"
@@ -79,7 +73,7 @@ public static void Run(TimerInfo myTimer, TraceWriter log, out Mail message)
         var content = new Content
         {
             Type = "text/html",
-            Value = comics
+            Value = latestArticle
         };
         message.AddContent(content);
         message.AddPersonalization(personalization);
@@ -124,7 +118,7 @@ public static async Task<string> GetLatestArticle() {
 public static Mail SendEmail(string input) {
     var message = new Mail
     {
-        Subject = "New Comics"
+        Subject = "Latest Article"
     };
 
     var personalization = new Personalization();
