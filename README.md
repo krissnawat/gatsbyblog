@@ -1,6 +1,8 @@
 # Gatsby version of my site
 
-This should is in the early stages of development. A lot of code is copied & pasted from a Ghost blog I had setup. I'm transitioning that over to this blog. I plan on cleaning parts up & refactoring as I have time.
+This blog is in the early stages of development. A lot of code is copied & pasted from a Ghost blog I had setup. I'm transitioning that over to this blog. I plan on cleaning parts up & refactoring as I have time.
+
+Most of the personalized content can be swapped in the `/src/constants.js` file.
 
 ## Credits
 
