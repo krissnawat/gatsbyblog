@@ -15,7 +15,6 @@ You are in the right place if you're trying to use `git clone` on a computer and
 > *SSL certificate problem: self signed certificate in certificate chain*  
 > *SSL certificate problem: unable to get local issuer certificate*
 
-
 A popular workaround is to disable SSL Verification using `git config --global http.sslVerify false` but that creates large security risks. SSL is a good thing & we should use it, even in cases where your company makes it difficult. The solution is to add the certificates to Git's trusted certificates. 
 
 I ran into a popular enterprise tool named Palo Alto that does a man in the middle on untrusted web traffic. While Palo Alto is great for securing your company's network, it can make using secure code repositories like GitHub more difficult if it intercepts the traffic. Let's look at an example using GitHub.
@@ -26,7 +25,7 @@ On the drop down menu, click *Valid*
 
 ![Click Chrome secure tab in address bar](img\git-self-signed-cert-1.png)
 
-In my example, you will notice two certification paths above GitHub. 
+In my example, you will notice two certification paths above GitHub.
 
 We'll need to do the following steps for both certification paths.
 
@@ -77,4 +76,4 @@ We have one last step to complete. Back in your terminal add your copied `curl-c
 git config --global http.sslCAInfo C:/Users/Matt/curl-ca-bundle.crt
 ```
 
-You should now be able to access GitHub using `git clone` without compromising security. Give it a shot. 
+You should now be able to access GitHub using `git clone` without compromising security. Give it a shot.

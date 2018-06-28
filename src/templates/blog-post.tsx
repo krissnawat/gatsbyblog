@@ -20,13 +20,43 @@ export const HTMLContent = ({ content, className }) => <div
 export const BlogPostTemplate = ({ content, contentComponent, description, title, date, tags, path, cover }: BlogPostTemplateProps) => {
   const PostContent = contentComponent || Content
   const d = new Date(date)
-  const firstTag = (tags!== null && tags.length > 0) ? tags[0] : config.DOMAIN
+  const firstTag = (tags !== null && tags.length > 0) ? tags[0] : config.DOMAIN
   const dateTime = d.getFullYear().toString() + "-" +
     padStart((d.getMonth() + 1).toString(), 2, "0") + "-" +
     padStart(d.getDate().toString(), 2, "0")
   const coverImage = cover ?
     `${config.DOMAIN}${cover}` :
     `https://via.placeholder.com/1024x512/2bbdf7/FFF?text=${title}`
+
+  //TODO: Add publisher logo (just name) https://developers.google.com/search/docs/data-types/article
+  const googleStructuredData: ArticleStructuredData = {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "name": title,
+    "headline": title,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": config.DOMAIN
+    },
+    "author": {
+      "@type": "Person",
+      "name": config.AUTHOR
+    },
+    "datePublished": dateTime,
+    "description": description,
+    "publisher": {
+      "@type": "Organization",
+      "name": config.AUTHOR,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${config.DOMAIN}/img/publisher-logo.gif`
+      }
+    }
+  }
+
+  if (cover) {
+    googleStructuredData.image = coverImage
+  }
 
   return (
     <div id="article" className="box post-template">
@@ -49,6 +79,9 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
           { name: "twitter:image", content: coverImage },
         ]}
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(googleStructuredData)}</script>
+      </Helmet>
       <header className="post-header post">
         <h1 className="post-title">{title}</h1>
         <section className="post-meta">
@@ -64,8 +97,8 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
           link={path}
           title={title}
         />
-        <Comments 
-          link={path} 
+        <Comments
+          link={path}
           title={title}
           category_id={firstTag}
         />
@@ -124,4 +157,30 @@ export interface BlogPostTemplateProps {
   tags: string[] | null
   path: string
   cover: string
+}
+
+export interface ArticleStructuredData {
+  "@context": string
+  "@type": string
+  "mainEntityOfPage": {
+    "@type": string
+    "@id": string
+  }
+  "name": string
+  "headline": string
+  "author": {
+    "@type": string
+    "name": string
+  },
+  "datePublished": string
+  description: string
+  image?: string
+  "publisher": {
+    "@type": string
+    "name": string
+    "logo": {
+      "@type": string
+      "url": string
+    }
+  }
 }
