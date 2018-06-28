@@ -3,6 +3,8 @@ templateKey: blog-post
 path: /why-is-typescript-adding-class-comments-to-my-code
 title: Why is TypeScript Adding Class Comments to my Code
 date: 2018-06-02T20:12:23.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
+cover: /cover/why-is-typescript-adding-class-comments-to-my-code.png
 description: I noticed all my TypeScript compiled files had been modified after a recent change. I hadn't changed anything in them so this gave me some concern. What I found was TypeScript added a /** @class */ comment to the modified files.
 tags:
   - TypeScript

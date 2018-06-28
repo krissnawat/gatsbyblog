@@ -1,8 +1,10 @@
 ---
 templateKey: blog-post
 path: /display-node-errors-in-iis
-title: Display Node.js Errors on a Windows IIS Server?
+title: Display Node.js Errors on a Windows IIS Server
 date: 2018-04-26T22:12:23.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
+cover: /cover/display-node-errors-in-iis.png
 description: If you are running IIS Node with a Node server on IIS and want your Node errors to show up instead of IIS errors, read this.
 ---
 Today I was working on a Node server that runs on a Windows server with IIS. I ran into a problem where I wanted my 404 errors to actually send a 404 result with a custom page created in Node. Sending a 404 error made IIS want to display its custom 404 error page though.

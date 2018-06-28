@@ -3,6 +3,7 @@ templateKey: blog-post
 path: /host-blazor-on-netlify
 title: Hosting Blazor on Netlify
 date: 2018-06-21T20:12:23.000Z
+modifiedDate: 2018-06-21T20:12:23.000Z
 cover: /cover/host-blazor-on-netlify.png
 description: Since Blazor is a frontend framework, we can host our Blazor apps on any serverless or static web host. The only requirement is that we can add minor configuration to redirect URLs so that all URLs point to our index.html page. Netlify fits this perfect. Netlify also happens to be my favorite host for static websites.
 tags:

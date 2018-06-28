@@ -3,6 +3,7 @@ templateKey: blog-post
 path: /blazor-no-registered-service-of-type
 title: Blazor Error - There is no Registered Service of Type
 date: 2018-06-10T20:12:23.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
 cover: /cover/blazor-no-registered-service-of-type.png
 description: Experimenting with Blazor, I ran into this error. "There is no registered service of type...".
 tags:

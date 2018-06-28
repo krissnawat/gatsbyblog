@@ -3,6 +3,8 @@ templateKey: blog-post
 path: /what-is-the-actor-model-and-when-should-you-use-it
 title: What is the Actor Model & When Should You Use it?
 date: 2017-07-23T19:38:58.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
+cover: /cover/what-is-the-actor-model-and-when-should-you-use-it.png
 description: The more things change, the more they stay the same. In the 1970's computer scientists were pushing hardware to its limits. The engineers of the day had all sorts of hacks to squeak out performance.
 tags:
   - Functional Programming

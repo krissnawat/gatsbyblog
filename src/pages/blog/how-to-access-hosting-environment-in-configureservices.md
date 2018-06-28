@@ -3,6 +3,7 @@ templateKey: blog-post
 path: /how-to-access-hosting-environment-in-configureservices
 title: How to Access the Hosting Environment in ConfigureServices
 date: 2018-06-13T20:12:23.000Z
+modifiedDate: 2018-06-13T20:12:23.000Z
 cover: /cover/how-to-access-hosting-environment-in-configureservices.png
 description: It can be useful to run different services in Development vs Production. The .NET Core templates do this within certain methods, such as the Configure method in the Startup class but there is no example of how to do it in the ConfigureServices method within the Startup Class. 
 tags:

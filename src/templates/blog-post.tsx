@@ -17,7 +17,7 @@ export const HTMLContent = ({ content, className }) => <div
   dangerouslySetInnerHTML={{ __html: content }}
 />
 
-export const BlogPostTemplate = ({ content, contentComponent, description, title, date, tags, path, cover }: BlogPostTemplateProps) => {
+export const BlogPostTemplate = ({ content, contentComponent, description, title, date, modifiedDate, tags, path, cover }: BlogPostTemplateProps) => {
   const PostContent = contentComponent || Content
   const d = new Date(date)
   const firstTag = (tags !== null && tags.length > 0) ? tags[0] : config.DOMAIN
@@ -28,7 +28,6 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
     `${config.DOMAIN}${cover}` :
     `https://via.placeholder.com/1024x512/2bbdf7/FFF?text=${title}`
 
-  //TODO: Add publisher logo (just name) https://developers.google.com/search/docs/data-types/article
   const googleStructuredData: ArticleStructuredData = {
     "@context": "http://schema.org",
     "@type": "Article",
@@ -43,6 +42,7 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
       "name": config.AUTHOR
     },
     "datePublished": dateTime,
+    "dateModified": modifiedDate,
     "description": description,
     "publisher": {
       "@type": "Organization",
@@ -121,6 +121,7 @@ const Post = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         date={post.frontmatter.date}
+        modifiedDate={post.frontmatter.modifiedDate}
         title={post.frontmatter.title}
         path={post.frontmatter.path}
         tags={post.frontmatter.tags}
@@ -140,6 +141,7 @@ export const pageQuery = graphql`
       frontmatter {
         path
         date(formatString: "MMMM D, YYYY")
+        modifiedDate(formatString: "YYYY-MM-DD")
         title
         description
         cover
@@ -154,6 +156,7 @@ export interface BlogPostTemplateProps {
   description: string
   title: string
   date: string
+  modifiedDate: string
   tags: string[] | null
   path: string
   cover: string
@@ -173,6 +176,7 @@ export interface ArticleStructuredData {
     "name": string
   },
   "datePublished": string
+  "dateModified": string
   description: string
   image?: string
   "publisher": {

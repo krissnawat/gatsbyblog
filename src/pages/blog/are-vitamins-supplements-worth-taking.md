@@ -3,6 +3,8 @@ templateKey: blog-post
 path: /are-vitamins-supplements-worth-taking
 title: Are Vitamins & Supplements Worth Taking?
 date: 2017-11-07T02:12:23.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
+cover: /cover/are-vitamins-supplements-worth-taking.png
 description: I'm personally a big fan of Vitamin D & Zinc whenever I feel run down or feel a cold coming. I was excited to see one of my favorite new podcasts, Science Vs tackle this topic. 
 tags:
   - Podcasts

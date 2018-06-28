@@ -3,6 +3,8 @@ templateKey: blog-post
 path: /how-to-implement-terms-of-service-on-your-website
 title: How to Implement Terms of Service on Your Website
 date: 2017-11-08T02:32:32.000Z
+modifiedDate: 2017-11-08T02:32:32.000Z
+cover: /cover/how-to-implement-terms-of-service-on-your-website.png
 description: I often hear a lot of developer's say to just copy someone else's Terms of Service, make some minor changes & call it good. This is obviously not great legal advice. Today I actually learned some important concepts in regards to Terms of Service.
 tags:
   - Podcasts

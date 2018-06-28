@@ -3,6 +3,8 @@ templateKey: blog-post
 path: /cmder-my-favorite-windows-terminal
 title: Cmder, My Favorite Windows Terminal
 date: 2018-06-09T00:00:00.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
+cover: /cover/cmder-my-favorite-windows-terminal.png
 description: At a recent conference I learned about Cmder, an awesome terminal for Windows. I've only been using it for a couple of months, but here's what I really like.
 tags:
   - Tools

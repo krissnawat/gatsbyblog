@@ -3,6 +3,8 @@ templateKey: blog-post
 path: /understand-the-risks-of-not-having-a-secure-website
 title: Understand the Risks of Not Having a Secure Website
 date: 2017-06-29T02:37:46.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
+cover: /cover/understand-the-risks-of-not-having-a-secure-website.png
 description: Over 80% of the top million websites either don't have a secure HTTPS website or they have one and aren't properly using it. This can cripple your business, even if you're not doing any financial transactions. 
 tags:
   - SSL

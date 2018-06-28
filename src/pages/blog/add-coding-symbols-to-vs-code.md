@@ -3,6 +3,7 @@ templateKey: blog-post
 path: /add-coding-symbols-to-vs-code
 title: Add Coding Symbols to VSCode
 date: 2018-06-17T20:12:23.000Z
+modifiedDate: 2018-06-17T20:12:23.000Z
 cover: /cover/add-coding-symbols-to-vs-code.png
 description: As developers we spend more time reading code, than writing. One of the most common tasks we do are comparing items. Using symbols can make your code easier & more enjoyable to read.
 tags:

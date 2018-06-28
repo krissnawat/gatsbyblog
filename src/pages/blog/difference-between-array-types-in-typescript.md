@@ -3,6 +3,7 @@ templateKey: blog-post
 path: /difference-between-array-types-in-typescript
 title: Difference Between Array<Type>, Type[], [Type] in TypeScript
 date: 2017-09-13T19:38:58.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
 cover: /cover/difference-between-array-types-in-typescript.jpg
 description: When defining an array in TypeScript you might think it is okay to define it using `[string]`. I have made this mistake several times & I find others making it often as well. This is actually defining a tuple, which is probably not the array you are wanting.
 tags:

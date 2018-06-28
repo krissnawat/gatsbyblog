@@ -3,6 +3,7 @@ templateKey: blog-post
 path: /how-to-add-a-header
 title: How to add a Header
 date: 2018-01-10T20:12:23.000Z
+modifiedDate: 2018-01-10T20:12:23.000Z
 cover: /cover/how-to-add-a-header.png
 description: This a simple & short guide on how to add a header to different server architectures.
 tags:

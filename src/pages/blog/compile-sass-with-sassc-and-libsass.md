@@ -3,6 +3,8 @@ templateKey: blog-post
 path: /compile-sass-with-sassc-and-libsass
 title: Compile Sass with SassC and Libsass
 date: 2014-01-09T15:38:00.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
+cover: /cover/compile-sass-with-sassc-and-libsass.png
 description: Recently Foundation launched version 5 of their framework. This introduced me to Libsass and SassC, a library and wrapper that compiles Sass using C instead of Ruby.
 tags:
   - Sass

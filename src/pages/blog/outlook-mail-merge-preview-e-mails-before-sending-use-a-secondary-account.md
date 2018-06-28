@@ -3,6 +3,8 @@ templateKey: blog-post
 path: /outlook-mail-merge-preview-e-mails-before-sending-use-a-secondary-account
 title: Outlook Mail Merge - Preview E-mails Before Sending & Use a Secondary Account
 date: 2017-01-11T16:04:58.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
+cover: /cover/outlook-mail-merge-preview-e-mails-before-sending-use-a-secondary-account.png
 description: Today at the office, I was trying to help someone do a quick e-mail merge using Microsoft Office. There are actually times, this is the preferred method over MailChimp, which we also use. We had our Excel spreadsheet of data done, we typed up the e-mail in Word & inserted our mail merge tags. Then I found out we needed to send from their non-primary account.
 ---
 Today at the office, I was trying to help someone do a quick e-mail merge using Microsoft Office. There are actually times, this is the preferred method over MailChimp, which we also use. We had our Excel spreadsheet of data done, we typed up the e-mail in Word & inserted our mail merge tags. Then I found out we needed to send from their non-primary account. This turned out to be rather difficult in our enterprise setting. So we came up with this hack to not only allow them to send the e-mails from their other account, but preview & edit individual e-mails as well.

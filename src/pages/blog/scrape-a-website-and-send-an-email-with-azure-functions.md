@@ -3,6 +3,7 @@ templateKey: blog-post
 path: /scrape-a-website-and-send-an-email-with-azure-functions
 title: Scrape a Website & Send an E-mail with Azure Functions
 date: 2018-06-27T20:12:23.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
 cover: /cover/scrape-a-website-and-send-an-email-with-azure-functions.png
 description: Serverless Functions are an awesome way to create small tasks that can run on a schedule, by the click of a button or using your voice. We'll create a function that visits a website, collects important data & sends that via an e-mail back to us on a schedule.
 tags:

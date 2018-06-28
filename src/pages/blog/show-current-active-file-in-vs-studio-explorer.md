@@ -3,6 +3,7 @@ templateKey: blog-post
 path: /show-current-active-file-in-vs-studio-explorer
 title: How to Show the Current Active File in Visual Studio Solution Explorer
 date: 2018-06-28T20:00:00.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
 cover: /cover/show-current-active-file-in-vs-studio-explorer.png
 description: Trying to find your current active file in Visual Studio's Solution Explorer can be a pain. Here's how to make it less painful.
 tags:

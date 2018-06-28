@@ -3,6 +3,8 @@ templateKey: blog-post
 path: /what-is-currency-and-parallelism
 title: What is Currency and Parallelism?
 date: 2017-07-23T19:38:58.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
+cover: /cover/what-is-currency-and-parallelism.png
 description: Concurrency is the ability to break a job down into multiple tasks & work on those multiple tasks at the same time by switching back & forth between the tasks.
 tags:
   - Functional Programming

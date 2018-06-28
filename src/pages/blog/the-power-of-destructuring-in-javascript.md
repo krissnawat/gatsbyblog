@@ -3,6 +3,8 @@ templateKey: blog-post
 path: /the-power-of-destructuring-in-javascript
 title: The Power of Destructuring in JavaScript
 date: 2017-06-29T03:14:31.000Z
+modifiedDate: 2018-06-28T00:12:23.000Z
+cover: /cover/the-power-of-destructuring-in-javascript.png
 description: In my free time, I've been messing around with a functional programming language built for the Erlang VM called Elixir. One of my favorite features of Elixir is pattern matching. As of ES6, we now have some pattern matching features in JavaScript. One of those is destructuring. Using destructuring will simplify your code & make it more readable. 
 tags:
   - JavaScript
