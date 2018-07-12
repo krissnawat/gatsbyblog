@@ -1,0 +1,43 @@
+---
+templateKey: blog-post
+path: /entity-framework-no-type-was-specified-for-the-decimal-column
+title: Fixing Entity Framework Validation 30000 No Type Specified for the Decimal Column
+date: 2018-07-12T20:12:23.000Z
+modifiedDate: 2018-07-12T20:12:23.000Z
+cover: /cover/entity-framework-no-type-was-specified-for-the-decimal-column.png
+description: Here's a quick fix for Entity Framework's Validation 30000 errors that show up on decimal columns.
+tags:
+  - .NET Core
+  - .NET
+  - Errors
+---
+
+If you are using Entity Framework in a .NET Core project, you might run into the following issue if you have decimal fields.
+
+    Microsoft.EntityFrameworkCore.Model.Validation[30000]
+    No type was specified for the decimal column 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+
+In short, this means that Entity Framework will provide a default precision to the database. The default is (18, 2). That means it will store 18 total digits, with 2 of those digits being behind the decimal point. If your record has more than 2 decimal points, SQL Server will truncate the extras. If your record has more than 18 total numbers, you will get an "out of range" error.
+
+The easiest fix is to use Data Annotations to declare a default on your model. The data annotation looks like: `[Column(TypeName = "decimal(18,2)")]`
+
+For a model named Product with a Price attribute, it would look like this:
+
+```csharp
+public class Product {
+    public int ID { get; set; }
+    public string Title { get; set; }
+    [Column(TypeName = "decimal(18,2)")]
+    public decimal Price { get; set; }
+}
+```
+
+Feel free to adjust the value away from the default 18, 2 if you need.
+
+You can also add it to the OnModelCreating method of your DbContext implementation instead of the above method. That would look like this:
+
+```csharp
+modelBuilder.Entity<Product>()
+    .Property(p => p.Price)
+    .HasPrecision(18, 2);
+```
