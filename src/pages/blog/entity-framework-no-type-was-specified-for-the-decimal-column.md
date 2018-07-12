@@ -17,7 +17,7 @@ If you are using Entity Framework in a .NET Core project, you might run into the
     Microsoft.EntityFrameworkCore.Model.Validation[30000]
     No type was specified for the decimal column 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
 
-This means Entity Framework will provide a default precision to the database. The default is (18, 2). That means it will store 18 total digits, with 2 of those digits being to the right of the decimal point.
+This means Entity Framework will provide a default precision to the database. The default is typically (18, 2). That means it will store 18 total digits, with 2 of those digits being to the right of the decimal point.
 
 * If your record has more than 2 decimal points, SQL Server will truncate the extras.
 * If your record has more than 18 total digits, you will get an "out of range" error.
@@ -44,3 +44,7 @@ modelBuilder.Entity<Product>()
     .Property(p => p.Price)
     .HasPrecision(18, 2);
 ```
+
+Once you add your migration, you can expect to receive the warning "An operation was scaffolded that may result in the loss of data. Please review the migration for accuracy."
+
+This is telling you the same as the original error. You've now specified the precision to be (18, 2). If for any reason your default precision wasn't that, your data may be modified when you update the database.
