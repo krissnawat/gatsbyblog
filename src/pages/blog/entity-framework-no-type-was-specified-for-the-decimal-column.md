@@ -37,12 +37,16 @@ public class Product {
 
 You can adjust the value away from the default 18, 2 if you need.
 
-You can also add it to the OnModelCreating method of your DbContext implementation instead of the above method. That would look like this:
+You can also add it to the OnModelCreating method of your DbContext implementation instead of the above method. It would look similar to the following:
 
 ```csharp
-modelBuilder.Entity<Product>()
-    .Property(p => p.Price)
-    .HasPrecision(18, 2);
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    base.OnModelCreating(modelBuilder);
+    modelBuilder.Entity<Product>()
+        .Property(p => p.Price)
+        .HasPrecision(18, 2);
+}
 ```
 
 Once you add your migration, you can expect to receive the warning "An operation was scaffolded that may result in the loss of data. Please review the migration for accuracy."
