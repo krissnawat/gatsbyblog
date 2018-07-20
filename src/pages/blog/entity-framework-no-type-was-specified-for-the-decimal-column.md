@@ -42,7 +42,7 @@ You can also add it to the OnModelCreating method of your DbContext implementati
 ```csharp
 modelBuilder.Entity<Product>()
     .Property(p => p.Price)
-    .HasPrecision(18, 2);
+    .HasColumnType("decimal(18,2)");
 ```
 
 Once you add your migration, you can expect to receive the warning "An operation was scaffolded that may result in the loss of data. Please review the migration for accuracy."
