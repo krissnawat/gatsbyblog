@@ -11,8 +11,8 @@ export const IndexPage = (props) => {
   const now = new Date();
 
   const list = posts
-    .filter((post) => 
-      post.node.frontmatter.templateKey === "blog-post" && 
+    .filter((post) =>
+      post.node.frontmatter.templateKey === "blog-post" &&
       new Date(post.node.frontmatter.date) < now
     )
     .map(({ node: post }) => ({
@@ -21,7 +21,8 @@ export const IndexPage = (props) => {
       blurb: post.frontmatter.description,
       date: post.frontmatter.date,
     }))
-  const coverImage = `https://via.placeholder.com/1024x512/2bbdf7/FFF?text=Matt Ferderer`
+  //TODO: Change coverImage to 1200x1200 that crops nicely to 1200x630 on FB
+  const coverImage = `${config.DOMAIN}/img/twitter-default.png`
   return (
     <div>
       <ArticleList articles={list} />
@@ -41,9 +42,26 @@ export const IndexPage = (props) => {
           { name: "twitter:description", content: config.SITE_DESCRIPTION },
           { name: "twitter:url", content: config.DOMAIN },
           { name: "twitter:site", content: "@" + config.TWITTER },
-          { name: "twitter:image", content: coverImage },
+          { name: "twitter:image", content: `${config.DOMAIN}/img/twitter-default.png` },
         ]}
-      />
+      >
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": config.SITE_TITLE,
+            "url": config.DOMAIN,
+            "logo": `${config.DOMAIN}/img/profile-1.gif`,
+            "sameAs": [
+              "https://twitter.com" + config.TWITTER,
+              "https://www.linkedin.com/in/" + config.LINKEDIN,
+              "https://medium.com/@" + config.MEDIUM
+              // "https://plus.google.com/+mattferderer",
+              // "https://www.pinterest.com/mattferderer"
+            ]
+          })}
+        </script>
+      </Helmet>
     </div>
   )
 }

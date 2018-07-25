@@ -26,7 +26,7 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
     padStart(d.getDate().toString(), 2, "0")
   const coverImage = cover ?
     `${config.DOMAIN}${cover}` :
-    `https://via.placeholder.com/1024x512/2bbdf7/FFF?text=${title}`
+    `${config.DOMAIN}/img/twitter-default.png`
 
   const googleStructuredData: ArticleStructuredData = {
     "@context": "http://schema.org",
