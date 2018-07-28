@@ -8,6 +8,7 @@ module.exports = {
   LINKEDIN: 'mattferderer',
   GITHUB: 'mattferderer',
   AUTHOR: `Matt Ferderer`,
+  MEDIUM: `mattferderer`,
   REPORTURI: `mattferderer`,
   DISQUS: `mattferderer`,
   BIO: `I am a Software Developer primarily using JavaScript and C#. I write about Building Software, Web Security and Artificial Intelligence. Besides tech, I occasionally write about fitness, education & business.`,

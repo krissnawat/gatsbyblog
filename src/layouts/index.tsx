@@ -9,7 +9,7 @@ import * as config from "../constants"
 const menuLinks = [
   { url: "/", title: "Home" },
   { url: "/tag/javascript", title: "JavaScript" },
-  { url: "/tag/elixir", title: "Elixir" },
+  { url: "/tag/net", title: ".NET" },
   { url: "/tag/security", title: "Security" },
 ]
 
@@ -42,29 +42,29 @@ const TemplateWrapper = ({ children }) => (
         },
         {
           rel: "apple-touch-icon",
-          sizes:"180x180",
-          href:"/apple-touch-icon.png"
+          sizes: "180x180",
+          href: "/apple-touch-icon.png"
         },
         {
           rel: "icon",
-          type:"image/png",
-          sizes:"32x32",
-          href:"/favicon-32x32.png"
+          type: "image/png",
+          sizes: "32x32",
+          href: "/favicon-32x32.png"
         },
         {
           rel: "icon",
-          type:"image/png",
-          sizes:"16x16",
-          href:"/favicon-16x16.png"
+          type: "image/png",
+          sizes: "16x16",
+          href: "/favicon-16x16.png"
         },
         {
           rel: "manifest",
-          href:"/site.webmanifest"
+          href: "/site.webmanifest"
         },
         {
           rel: "mask-icon",
-          href:"/safari-pinned-tab.svg",
-          color:"#5bbad5"
+          href: "/safari-pinned-tab.svg",
+          color: "#5bbad5"
         },
       ]}
       meta={[
@@ -84,7 +84,7 @@ const TemplateWrapper = ({ children }) => (
         { name: "theme-color", content: "#ffffff" },
       ]}
     >
-	<html lang="en" />
+      <html lang="en" />
     </Helmet>
     <Header siteTitle={config.SITE_TITLE} tagList={menuLinks} />
     <main id="content" className="content clearfix" role="main">
