@@ -71,11 +71,11 @@ You will want to change *Matt* to your username.
 
 Using your favorite text editor you can open up your `ca-bundle.crt` file that you copied & your `.cer` files you exported from the browser. Copy the entire `.cer` text including the `----BEGIN CERTIFICATE---` and `----END CERTIFICATE---` to the bottom of your `ca-bundle.crt` file. Do this for all the `.cer` files you exported. 
 
-We have one last step to complete. Back in your terminal add your copied `curl-ca-bundle.crt
+We have one last step to complete. Back in your terminal add your copied `ca-bundle.crt
 ` to Git's config.
 
 ```bash
-git config --global http.sslCAInfo C:/Users/Matt/curl-ca-bundle.crt
+git config --global http.sslCAInfo C:/Users/Matt/ca-bundle.crt
 ```
 
 You should now be able to access GitHub using `git clone` without compromising security. Give it a shot.
